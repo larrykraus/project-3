@@ -1,0 +1,54 @@
+body {
+	background-image: url("../assets/mountain-01.jpg");	
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+h1 {
+	color: red;
+}
+
+.navbar {
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+}
+
+.canvas {
+	height: 400px;
+	width: 600px;
+	background-color: rgba(125, 125, 125, 0.5);
+	border-radius: 20px;
+	margin: 0 auto;
+	margin-top: 80px;
+}
+
+div.canvas > p, h3 {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.cityname {
+	text-align: center;
+
+}
+
+.tileContainer {
+	padding: 8px;
+}
+
+.tile {
+	display: inline-block;
+	width: 80px;
+	height: 110px;
+	border-radius: 5px;
+	background-color: #eee;
+}
+
+.navText {
+	color: black;
+}
+
+.loginFields {
+	display: inline-block;
+	text-align: left;
+}
