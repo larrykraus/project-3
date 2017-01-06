@@ -1,0 +1,45 @@
+{
+  "name": "project-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larrykraus/project-3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/larrykraus/project-3/issues"
+  },
+  "homepage": "https://github.com/larrykraus/project-3#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "bcrypt-nodejs": "latest",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "~1.0.0",
+    "express-session": "~1.0.0",
+    "method-override": "~1.0.0",
+    "mongoose": "^4.7.2",
+    "morgan": "~1.0.0",
+    "passport": "~0.1.17",
+    "passport-facebook": "~1.0.2",
+    "passport-google-oauth": "~0.1.5",
+    "passport-local": "~0.1.6",
+    "passport-twitter": "~1.0.2",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "pg": "^6.1.2",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.28.0"
+  }
+}
