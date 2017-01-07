@@ -1,6 +1,6 @@
 var Sequelize = require('sequelize');
 
-var sequelize = new Sequelize('postgres://micahwierenga@localhost:5432/project-3');
+var sequelize = new Sequelize('postgres://guyliechty@localhost:5432/project-3');
 
 module.exports.Sequelize = Sequelize;
 module.exports.sequelize = sequelize;
@@ -27,4 +27,4 @@ module.exports.models = {
 	User: User,
 	Location: Location,
 	Activity: Activity
-}
+};
