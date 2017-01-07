@@ -24,6 +24,7 @@ var sequelize = new Sequelize(process.env.HEROKU_POSTGRESQL_YELLOW_URL || 'postg
 	loggin: true
 })
 
+
 module.exports.Sequelize = Sequelize;
 module.exports.sequelize = sequelize;
 
@@ -49,4 +50,4 @@ module.exports.models = {
 	User: User,
 	Location: Location,
 	Activity: Activity
-}
+};
