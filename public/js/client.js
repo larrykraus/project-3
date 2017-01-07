@@ -1,5 +1,6 @@
 angular.module('weatherApp', ['ngRoute'])
 	.config(function($routeProvider, $locationProvider) {
+		console.log('Yippee client.js')
 		$locationProvider.html5Mode({
 			enabled: true,
 			requireBase: false
