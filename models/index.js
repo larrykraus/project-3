@@ -16,11 +16,11 @@ var pg = require('pg');
 
 // var sequelize = new Sequelize('postgres://micahwierenga@localhost:5432/project-3');
 
-var sequelize = new Sequelize(process.env.HEROKU_POSTGRESQL_YELLOW_URL, {
+var sequelize = new Sequelize(process.env.HEROKU_POSTGRESQL_YELLOW_URL || 'postgres://micahwierenga@localhost:5432/project-3', {
 	dialect: 'postgres',
 	protocol: 'postgres',
-	port: match[4],
-	host: match[3],
+	// port: match[4],
+	// host: match[3],
 	loggin: true
 })
 
