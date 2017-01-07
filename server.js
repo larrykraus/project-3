@@ -5,7 +5,7 @@ var weatherRouter = require('./config/routes.js');
 
 app.use(bodyParser.json());
 
-app.use(weatherRouter);
+// app.use(weatherRouter);
 app.use(express.static('public'));
 app.use(function(req, res) {
 	res.sendFile(__dirname + '/public/index.html');
