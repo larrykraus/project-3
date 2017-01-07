@@ -52,3 +52,9 @@ div.canvas > p, h3 {
 	display: inline-block;
 	text-align: left;
 }
+img#logo{
+	float: left;
+	padding: -50px;
+	width: 20%;
+	display: inline;
+}
