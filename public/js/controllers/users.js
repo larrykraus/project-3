@@ -8,12 +8,15 @@ UserIndexController.$inject = ['$http'];
 function UserIndexController($http) {
 	var vm = this;
 	vm.getAllUsers = getAllUsers;
+	vm.deleteUser = deleteUser;
+	vm.getWeather = getWeather;
 
 	function getAllUsers() {
 		console.log('getAllUsers');
 		$http
 			.get('/api/users')
 			.then(function(response) {
+				console.log(response.data);
 				vm.allUsers = response.data;
 			});
 	}
@@ -28,12 +31,36 @@ function UserIndexController($http) {
 			})
 	}
 
-	getAllUsers();
+	// getAllUsers();
+
+	// function getKey() {
+	// 	$http
+	// 		.get('/api/weather')
+	// 		.then(function(key) {
+	// 			vm.key = key;
+	// 		})
+	// }
+
+	// getKey();
+
+	// Get Weather
+
+	function getWeather(location) {
+		console.log('getWeather');
+		console.log(vm.location);
+		$http
+			.get('/api/weather/' + vm.location)
+			.then(function(response) {
+				vm.weather = response;
+				console.log(vm.weather);
+			});
+	}
 }
 
 UserShowController.$inject = ['$http', '$routeParams'];
 function UserShowController($http, $routeParams) {
 	var vm = this;
+	vm.getOneUser = getOneUser;
 
 	function getOneUser(user) {
 		console.log('getOneUser');
@@ -66,6 +93,7 @@ function UserNewController($http, $location) {
 UserEditController.$inject = ['$http', '$routeParams', '$location'];
 function UserEditController($http, $routeParams, $location) {
 	var vm = this;
+	vm.getUser = getUser;
 	vm.updatedUser = updatedUser;
 
 	function getUser() {

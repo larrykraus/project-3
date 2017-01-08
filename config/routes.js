@@ -3,6 +3,7 @@ var router = express.Router();
 var usersController = require('../controllers/users.js');
 var activitiesController = require('../controllers/activities.js');
 var locationsController = require('../controllers/locations.js');
+var weatherController = require('../controllers/weather.js');
 
 // User Routes
 
@@ -20,5 +21,47 @@ router.put('/api/users/:id', usersController.update)
 
 // destroy
 router.delete('/api/users/:id', usersController.destroy);
+
+
+// Location Routes
+
+// index
+router.get('/api/locations', locationsController.index);
+
+// create
+router.post('/api/locations', locationsController.create);
+
+// show
+router.get('/api/locations/:id', locationsController.show);
+
+// update
+router.put('/api/locations/:id', locationsController.update)
+
+// destroy
+router.delete('/api/locations/:id', locationsController.destroy);
+
+
+// Activity Routes
+
+// index
+router.get('/api/activities', activitiesController.index);
+
+// create
+router.post('/api/activities', activitiesController.create);
+
+// show
+router.get('/api/activities/:id', activitiesController.show);
+
+// update
+router.put('/api/activities/:id', activitiesController.update)
+
+// destroy
+router.delete('/api/activities/:id', activitiesController.destroy);
+
+
+// Weather API Route
+
+// show
+router.get('/api/weather/:location', weatherController.show);
 
 module.exports = router;

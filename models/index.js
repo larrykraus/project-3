@@ -3,7 +3,7 @@ var Sequelize = require('sequelize');
 var pg = require('pg');
 
 // pg.defaults.ssl = true;
-// pg.connect(process.env.DATABASE_URL, function(err, client) {
+// pg.connect(process.env.HEROKU_POSTGRESQL_YELLOW_URL, function(err, client) {
 //   if (err) throw err;
 //   console.log('Connected to postgres! Getting schemas...');
 
@@ -14,15 +14,7 @@ var pg = require('pg');
 //     });
 // });
 
-// var sequelize = new Sequelize('postgres://micahwierenga@localhost:5432/project-3');
-
-var sequelize = new Sequelize(process.env.HEROKU_POSTGRESQL_YELLOW_URL || 'postgres://micahwierenga@localhost:5432/project-3', {
-	dialect: 'postgres',
-	protocol: 'postgres',
-	// port: match[4],
-	// host: match[3],
-	loggin: true
-})
+var sequelize = new Sequelize('postgres://micahwierenga@localhost:5432/project-3');
 
 module.exports.Sequelize = Sequelize;
 module.exports.sequelize = sequelize;

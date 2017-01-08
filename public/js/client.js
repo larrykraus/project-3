@@ -19,6 +19,8 @@ angular.module('weatherApp', ['ngRoute'])
 			templateUrl: '/templates/display.html'
 		})
 		.when('/admin', {
-			templateUrl: '/templates/admin.html'
+			templateUrl: '/templates/admin.html',
+			controller: 'UserIndexController as usersController'
 		})
+
 	})
