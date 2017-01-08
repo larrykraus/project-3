@@ -55,6 +55,15 @@ div.canvas > p, h3 {
 img#logo{
 	float: left;
 	padding: -50px;
-	width: 20%;
+	width: 30%;
 	display: inline;
+	z-index: 1;
 }
+img:hover{
+	background: yellow; 
+}
+nav.navbar.navbar-default{
+	background: linear-gradient(rgba(63, 63, 191, .7), rgba(63, 63, 191, 0.2));
+	z-index: 1;
+}
+
