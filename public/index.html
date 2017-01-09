@@ -4,14 +4,33 @@
 	<title>Collie Weather</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<!-- <script src="/bower_components/angular/angular.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-    <!-- <script src="/bower_components/angular-route/angular-route.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script>
+	<script src="/bower_components/angular/angular.min.js"></script>
+<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script> -->
+    <script src="/bower_components/angular-route/angular-route.min.js"></script>
+<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script> -->
 	<script src="/js/client.js"></script>  
 	<script src="/js/controllers/users.js"></script> 
 	<script src="/js/controllers/locations.js"></script> 
 	<script src="/js/controllers/activities.js"></script> 
+<!-- Clock script -->
+	<script>
+	function startTime() {
+	    var today = new Date();
+	    var h = today.getHours();
+	    var m = today.getMinutes();
+	    var s = today.getSeconds();
+	    m = checkTime(m);
+	    s = checkTime(s);
+	    document.getElementById('txt').innerHTML =
+	    h + ":" + m + ":" + s;
+	    var t = setTimeout(startTime, 500);
+		}
+		function checkTime(i) {
+		    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+		    return i;
+		}
+</script>
+
 </head>
 <body ng-app='weatherApp'>
 	<nav class="navbar navbar-default">
@@ -68,16 +87,22 @@
 </nav>
 </div>
 
-	    </div><!-- /.navbar-collapse -->
-	  </div><!-- /.container-fluid -->
-	</nav>
+<!-- Temperature -->
 
-<!-- 	<div class="canvas">
+<div class="temperature container">
+	
+</div>
 
-	</div> -->
-	<div>
-		<ng-view></ng-view>
-	</div>
+<!-- CLock -->
+<div class="main-div container-fluid">
+	<h1>Hi, {{user.first_name}}</h1>
+	<body onload="startTime()">
+	<div id="txt"></div>
+</div>
+
+<div>
+	<ng-view></ng-view>
+</div>
 
 </body>
 </html>
