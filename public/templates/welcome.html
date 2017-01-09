@@ -1,9 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Collie Weather</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	```<!-- <script src="/bower_components/angular/angular.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <!-- <script src="/bower_components/angular-route/angular-route.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script>
+	<script src="/js/client.js"></script>  
+	<script src="/js/controllers/users.js"></script> 
+	<script src="/js/controllers/locations.js"></script> 
+	<script src="/js/controllers/activities.js"></script> 
+</head>
+<!-- <body ng-app='weatherApp'> -->
+<body ng-app='weatherApp'>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <div class="container">
+	      	<a class="navbar-brand navText" href="#"><img id="logo" src="../assets/logo.png"></a>
+	      </div>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li class="navText"><a href="#">Home</a></li>
+	        <li class="dropdown navText">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Weather<span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">Action</a></li>
+	            <li><a href="#">Another action</a></li>
+	            <li><a href="#">Something else here</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">Separated link</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">One more separated link</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+
+	      <ul class="nav navbar-nav navbar-right">
+	        <li class="navText"><a href="#">Log In</a></li>
+	        <li class="navText"><a href="#">Sign Up</a></li>
+	        <li class="dropdown navText">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="glyphicon glyphicon-cog" aria-hidden="true"></span><span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">Action</a></li>
+	            <li><a href="#">Another action</a></li>
+	            <li><a href="#">Something else here</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">Separated link</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+<!-- 	<div class="canvas">
+
+	</div> -->
+	<div>
+		<ng-view></ng-view>
+	</div>
+
+</body>
+</html>	
 	<div class="canvas">
 		<br>
 		<h3>Welcome to Collie Weather</h3>
-		<p>Instructions go here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae dicta molestias maiores ab quos doloremque sed veniam cum architecto aliquid iure praesentium minus quasi, nisi porro reprehenderit, nostrum, dolore iste.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur repellendus, harum reiciendis quia voluptate itaque porro. Cumque et dolor, maxime quidem reiciendis saepe illo iste, sunt doloribus eligendi nobis voluptas.</p>
+		<p class ="welcome-text">We made this app to make your life easier. Just set a city, then what you want to see. We'll handle the rest.</p>
 		<br>
-		<p>Our goals... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, ratione, deserunt. Iste temporibus id, aut molestias, reprehenderit repellat corporis saepe sapiente aperiam dignissimos iure illo unde optio ipsa necessitatibus beatae.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel quis, fugit est perspiciatis eaque aut atque laudantium, possimus blanditiis rem quam dignissimos modi dolorem mollitia recusandae ipsam iste doloribus accusantium.</p>
+	
 	</div>

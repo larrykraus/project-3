@@ -1,3 +1,19 @@
+/*Dropdown css*/
+
+body {
+    margin: 30px 0px;
+}
+.navbar-default .navbar-nav > li.dropdown:hover > a, 
+.navbar-default .navbar-nav > li.dropdown:hover > a:hover,
+.navbar-default .navbar-nav > li.dropdown:hover > a:focus {
+    background-color: rgb(231, 231, 231);
+    color: rgb(85, 85, 85);
+}
+li.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+/*End Dropdown CSS*/
 body {
 	background-image: url("../assets/mountain-01.jpg");	
 	background-size: 100%;
@@ -52,3 +68,21 @@ div.canvas > p, h3 {
 	display: inline-block;
 	text-align: left;
 }
+img#logo{
+	float: left;
+	padding: -50px;
+	display: flex;
+	width: 20%;
+	z-index: 1;
+}
+img:hover{
+	background: rgba(206, 206, 216, 0.2); 
+}
+nav.navbar.navbar-default{
+/*	background: linear-gradient(rgba(63, 63, 191, .73), rgba(63, 63, 191, 0.23));
+	z-index: 1;
+	position: fixed;
+}*/
+	background: rgba(165, 165, 165, .6);
+}
+
