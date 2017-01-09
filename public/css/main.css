@@ -86,4 +86,8 @@ nav.navbar.navbar-default{
 }*/
 	background: rgba(165, 165, 165, .6);
 }
+.tile > img {
+	margin: 0px auto;
+	text-align: center;
+}
 
