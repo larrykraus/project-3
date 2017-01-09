@@ -6,22 +6,16 @@ function show (req, res) {
 
 	var apiUrl = 'http://api.wunderground.com/api/' + apiKeyWeather;
 	var url = apiUrl + '/geolookup/q/' + req.params.location + '.json';
-	// var current_weather;
-		request(url, function (err, res, body) {
+
+		request(url, function (err, response1, body) {
 			var location = JSON.parse(body).location.requesturl;
 			var conditionsUrl = apiUrl + "/conditions/q/" + location + ".json";
-			request(conditionsUrl, function(err, res, body) {
-				console.log('This is the res: ' + res);
-				console.log('This is the body: ' + body);
+			request(conditionsUrl, function(err, response2, body) {
 
-				vm.current_weather = JSON.parse(body).current_observation;
-				console.log(vm.current_weather);
-				// console.log('And the observation: ' + observation.location);
-				// console.log("The weather in", observation.display_location.full, "is", observation.weather)
+				current_weather = JSON.parse(body).current_observation;
+				res.json(current_weather);
 			})
 		});
-	console.log(vm.current_weather);
-	res.json(vm.current_weather);
 }
 
 module.exports.show = show;

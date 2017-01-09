@@ -1,15 +1,18 @@
 angular.module('weatherApp')
-	.controller('UserIndexController', UserIndexController)
-	.controller('UserShowController', UserShowController)
-	.controller('UserEditController', UserEditController)
-	.controller('UserNewController', UserNewController);
+	.controller('UserController', UserController)
 
-UserIndexController.$inject = ['$http'];
-function UserIndexController($http) {
+UserController.$inject = ['$http', '$routeParams', '$location'];
+function UserController($http, $routeParams, $location) {
 	var vm = this;
 	vm.getAllUsers = getAllUsers;
 	vm.deleteUser = deleteUser;
+	vm.getOneUser = getOneUser;
+	vm.saveUser = saveUser;
+	vm.getUser = getUser;
+	vm.updateUser = updateUser;
 	vm.getWeather = getWeather;
+
+	// Get All Users
 
 	function getAllUsers() {
 		console.log('getAllUsers');
@@ -21,6 +24,8 @@ function UserIndexController($http) {
 			});
 	}
 
+	// Delete One User
+
 	function deleteUser(user) {
 		console.log('deleteUsers');
 		$http
@@ -31,36 +36,7 @@ function UserIndexController($http) {
 			})
 	}
 
-	// getAllUsers();
-
-	// function getKey() {
-	// 	$http
-	// 		.get('/api/weather')
-	// 		.then(function(key) {
-	// 			vm.key = key;
-	// 		})
-	// }
-
-	// getKey();
-
-	// Get Weather
-
-	function getWeather(location) {
-		console.log('getWeather');
-		console.log(vm.location);
-		$http
-			.get('/api/weather/' + vm.location)
-			.then(function(response) {
-				vm.weather = response;
-				console.log(vm.weather);
-			});
-	}
-}
-
-UserShowController.$inject = ['$http', '$routeParams'];
-function UserShowController($http, $routeParams) {
-	var vm = this;
-	vm.getOneUser = getOneUser;
+	// Show One User
 
 	function getOneUser(user) {
 		console.log('getOneUser');
@@ -71,13 +47,7 @@ function UserShowController($http, $routeParams) {
 			});
 	}
 
-	getOneUser();
-}
-
-UserNewController.$inject = ['$http', '$location'];
-function UserNewController($http, $location) {
-	var vm = this;
-	vm.saveUser = saveUser;
+	// Create New User
 
 	function saveUser(newUser) {
 		console.log('saveUser');
@@ -88,13 +58,8 @@ function UserNewController($http, $location) {
 				$location.path('/users/' + user.id);
 			});
 	}
-}
 
-UserEditController.$inject = ['$http', '$routeParams', '$location'];
-function UserEditController($http, $routeParams, $location) {
-	var vm = this;
-	vm.getUser = getUser;
-	vm.updatedUser = updatedUser;
+	// Update User
 
 	function getUser() {
 		console.log('getUser');
@@ -116,4 +81,18 @@ function UserEditController($http, $routeParams, $location) {
 
 	getUser();
 	}
+
+	// Get Weather
+
+	function getWeather(location) {
+		console.log('getWeather');
+		console.log(vm.location);
+		$http
+			.get('/api/weather/' + vm.location)
+			.then(function(response) {
+				vm.weather = response;
+				console.log(vm.weather);
+			});
+	}
 }
+
