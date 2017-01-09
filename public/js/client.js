@@ -1,3 +1,6 @@
+var request = require('request');
+var apiKeyWeather = process.env.apiKeyWeather || require('../config/env').key;
+
 angular.module('weatherApp', ['ngRoute'])
 	.config(function($routeProvider, $locationProvider) {
 		console.log('Yippee client.js')
@@ -10,7 +13,7 @@ angular.module('weatherApp', ['ngRoute'])
 
 		// Main Routes
 		.when('/', {
-			templateUrl: '/templates/welcome.html',
+			templateUrl: '/templates/index.html',
 			controller: 'UserController as userController'
 		})
 		.when('/login', {
@@ -24,6 +27,6 @@ angular.module('weatherApp', ['ngRoute'])
 		.when('/admin', {
 			templateUrl: '/templates/admin.html',
 			controller: 'UserController as userController'
-		})
+		});
 
-	})
+	});
