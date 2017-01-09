@@ -34,6 +34,15 @@
 		}
 </script>
 
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body ng-app='weatherApp'>
 	<nav class="navbar navbar-default">
@@ -121,6 +130,48 @@
 <div>
 	<ng-view></ng-view>
 </div>
+
+<!-- Modal -->
+
+<div class="container">
+	<div class="row">
+    
+    
+	<div id="myModal" class="modal fade in">
+        <div class="modal-dialog">
+            <div class="modal-content">
+ 
+                <div class="modal-header">
+                    <a class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+                    <h2 class="modal-title center-block">Team</h2>
+                </div>
+                <div class="modal-body">
+                		<div class="facebox">
+                			<img class="faces" src="./assets/merry.jpg">
+                		</div>
+                		<div class="facebox">
+                			<img class="faces" src="./assets/larry.jpg">
+                		</div>
+                		<div class="facebox">
+                			<img class="faces" src="./assets/guy.jpg">
+                		</div>
+                		<div class="facebox">
+                			<img class="faces" src="./assets/micah.jpeg">
+                		</div>
+						<h4>Collie Weather was designed by</h4>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dalog -->
+    </div><!-- /.modal -->
+    
+<a data-toggle="modal" href="#myModal" class="btn btn-primary center-block">Meet the Devs</a>
+
+
+	</div>
+</div>
+
+
+<!-- End Modal -->
 
 </body>
 </html>

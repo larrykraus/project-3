@@ -13,6 +13,7 @@ function show (req, res) {
 			request(conditionsUrl, function(err, response2, body) {
 
 				current_weather = JSON.parse(body).current_observation;
+				console.log(body.current_observation);
 				res.json(current_weather);
 			})
 		});

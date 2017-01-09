@@ -1,6 +1,3 @@
-var request = require('request');
-var apiKeyWeather = process.env.apiKeyWeather || require('../config/env').key;
-
 angular.module('weatherApp', ['ngRoute'])
 	.config(function($routeProvider, $locationProvider) {
 		console.log('Yippee client.js')
