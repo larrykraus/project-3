@@ -7,7 +7,6 @@ function index(req, res) {
 	console.log('Yippee index');
 	User.findAll()
 	    .then(function(users) {
-	    	console.log(users);
 	    	res.json(users);
 	    });
 };

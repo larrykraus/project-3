@@ -11,7 +11,11 @@ app.use(function(req, res) {
 	res.sendFile(__dirname + '/public/index.html');
 });
 
+
+//app.listen(process.env.PORT || 3000, function() {
+
 app.listen(process.env.DATABASE_URL || 3000, function() {
+
 	console.log(process.env.DATABASE_URL)
 	console.log('Weather app listening on localhost:3000');
 })

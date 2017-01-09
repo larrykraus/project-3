@@ -4,6 +4,8 @@
 	<title>Collie Weather</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="/bower_components/angular/angular.min.js"></script>
 <!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script> -->
     <script src="/bower_components/angular-route/angular-route.min.js"></script>
@@ -12,6 +14,7 @@
 	<script src="/js/controllers/users.js"></script> 
 	<script src="/js/controllers/locations.js"></script> 
 	<script src="/js/controllers/activities.js"></script> 
+  <!-- <script src="/js/controllers/weather.js"></script> -->
 <!-- Clock script -->
 	<script>
 	function startTime() {
@@ -48,14 +51,50 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
 	      <!-- LOGO -->
+
+	      	<li><a href="#"><img id="logo" src="./assets/logo.png"></a></li>
+
+	      <!-- Main nav -->
+	        <li class="navText"><a href="#">Home</a></li>
+
+	        <li class="dropdown navText">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Weather<span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">Action</a></li>
+	            <li><a href="#">Another action</a></li>
+	            <li><a href="#">Something else here</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">Separated link</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">One more separated link</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+
+		  <!-- dropdown -->
+<!-- 
+	<div class="container">
+<nav class="navbar navbar-default" role="navigation"> -->
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
 	      	<!-- <li><a href="#"><img id="logo" src="./assets/logo.png"></a> --></li>
 			
-	      <!-- Main nav -->
+
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+
       	<a href="#"><img id="logo" src="./assets/logo.png"></a>
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">More Weather <b class="caret"></b></a>
           <ul class="dropdown-menu">
@@ -87,11 +126,15 @@
 </nav>
 </div>
 
-<!-- Temperature -->
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
 
+<!-- Temperature -->
 <div class="temperature container">
 	
 </div>
+
 
 <!-- CLock -->
 <div class="main-div container-fluid">
