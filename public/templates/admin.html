@@ -1,0 +1,17 @@
+<h3>admin.html</h3>
+
+	<form ng-submit="usersController.getWeather(location)">
+		
+		<input ng-model="usersController.location">
+
+		
+
+
+		<input type="submit" value="Get Weather">
+	</form>
+
+<p ng-model="usersController.weather.city">{{usersController.weather.city}}</p>
+
+<ul>
+	<li ng-repeat="user in usersController.allUsers">{{user.first_name}}</li>
+</ul>
