@@ -2,7 +2,7 @@
   "name": "public",
   "homepage": "https://github.com/larrykraus/project-3",
   "authors": [
-    "micahwierenga <wierenga.micah@gmail.com>"
+    "gliechty <guy.liechty@gmail.com>"
   ],
   "description": "",
   "main": "",
@@ -15,7 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "^1.6.1",
-    "angular-route": "^1.6.1"
+    "bower": "*",
+    "angular": "^1.6.1"
   }
 }
