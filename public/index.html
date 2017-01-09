@@ -4,23 +4,42 @@
 	<title>Collie Weather</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<!-- <script src="/bower_components/angular/angular.min.js"></script> -->
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-	<!-- <script src="/bower_components/angular-route/angular-route.min.js"></script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="/bower_components/angular/angular.min.js"></script>
+<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script> -->
+    <script src="/bower_components/angular-route/angular-route.min.js"></script>
+<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script> -->
 	<script src="/js/client.js"></script>  
 	<script src="/js/controllers/users.js"></script> 
 	<script src="/js/controllers/locations.js"></script> 
-	<script src="/js/controllers/activities.js"></script>
-	<!-- <script src="/js/controllers/weather.js"></script> -->
+	<script src="/js/controllers/activities.js"></script> 
+  <!-- <script src="/js/controllers/weather.js"></script> -->
+<!-- Clock script -->
+	<script>
+	function startTime() {
+	    var today = new Date();
+	    var h = today.getHours();
+	    var m = today.getMinutes();
+	    var s = today.getSeconds();
+	    m = checkTime(m);
+	    s = checkTime(s);
+	    document.getElementById('txt').innerHTML =
+	    h + ":" + m + ":" + s;
+	    var t = setTimeout(startTime, 500);
+		}
+		function checkTime(i) {
+		    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+		    return i;
+		}
+</script>
 
 </head>
 <body ng-app='weatherApp'>
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <!-- Main nav -->
 	    <div class="navbar-header">
 	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 	        <span class="sr-only">Toggle navigation</span>
@@ -29,11 +48,10 @@
 	        <span class="icon-bar"></span>
 	      </button>
 	    </div>
-
-	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
 	      <!-- LOGO -->
+
 	      	<li><a href="#"><img id="logo" src="./assets/logo.png"></a></li>
 
 	      <!-- Main nav -->
@@ -67,12 +85,16 @@
         <span class="icon-bar"></span>
       </button>
     </div>
+	      	<!-- <li><a href="#"><img id="logo" src="./assets/logo.png"></a> --></li>
+			
+
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-       <!--  <li class="active"><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li> -->
+
+      	<a href="#"><img id="logo" src="./assets/logo.png"></a>
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">More Weather <b class="caret"></b></a>
           <ul class="dropdown-menu">
@@ -108,12 +130,22 @@
 	  </div><!-- /.container-fluid -->
 	</nav>
 
-<!-- 	<div class="canvas">
+<!-- Temperature -->
+<div class="temperature container">
+	
+</div>
 
-	</div> -->
-	<div>
-		<ng-view></ng-view>
-	</div>
+
+<!-- CLock -->
+<div class="main-div container-fluid">
+	<h1>Hi, {{user.first_name}}</h1>
+	<body onload="startTime()">
+	<div id="txt"></div>
+</div>
+
+<div>
+	<ng-view></ng-view>
+</div>
 
 </body>
 </html>

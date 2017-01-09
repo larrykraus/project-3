@@ -77,6 +77,7 @@ img#logo{
 }
 img:hover{
 	background: rgba(206, 206, 216, 0.2); 
+	border-radius: 50px;
 }
 nav.navbar.navbar-default{
 /*	background: linear-gradient(rgba(63, 63, 191, .73), rgba(63, 63, 191, 0.23));
