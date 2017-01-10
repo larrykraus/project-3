@@ -1,32 +1,46 @@
 	<form ng-submit="userController.getWeather(location)">		
 		<input ng-model="userController.location">
-
 		<input type="submit" value="Get Weather">
 	</form>
+
+
 	<div class="canvas">
-
-	
-
-<p ng-model="userController.weather.data.temp_f">{{userController.weather.data.temp_f}}</p>
 		<h3 class="cityname">Denver, CO</h3>
 		<div class="tileContainer">
-			<div class="tile" ng-model="userController.weather.data.temp_f">{{userController.weather.data.temp_f}}</div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile">
-				<p>4pm</p>	
-				<img src="http://icons.wxug.com/i/c/i/partlycloudy.gif">
-				<p>72 - 34</p>
+
+			<!-- hourly -->
+			<div id="hourly-tiles">
+				<div class="tile">
+					<p ng-model="userController.weather.data[1][0].FCTTIME.weekday_name">{{userController.weather.data[1][0].FCTTIME.civil}}</p>
+<!-- 					<img ng-model src="{{userController.weather.data[1][0].icon_url}}">
+ -->					<p ng-model="userController.weather.data[1][0].temp.english">{{userController.weather.data[1][0].temp.english}}</p>
+				</div>
+				<div class="tile">
+					<p ng-model="userController.weather.data[1][0].FCTTIME.weekday_name">{{userController.weather.data[1][1].FCTTIME.civil}}</p>
+					<p ng-model="userController.weather.data[1][0].temp.english">{{userController.weather.data[1][1].temp.english}}</p>
+				</div>
+				<div class="tile">
+					<p ng-model="userController.weather.data[1][0].FCTTIME.weekday_name">{{userController.weather.data[1][2].FCTTIME.civil}}</p>
+					<p ng-model="userController.weather.data[1][0].temp.english">{{userController.weather.data[1][2].temp.english}}</p>
+				</div>
+				<div class="tile">
+					<p ng-model="userController.weather.data[1][0].FCTTIME.weekday_name">{{userController.weather.data[1][3].FCTTIME.civil}}</p>
+					<p ng-model="userController.weather.data[1][0].temp.english">{{userController.weather.data[1][3].temp.english}}</p>
+				</div>
+				<div class="tile"></div>
 			</div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
+			<!-- 10 day -->
+			<div id="forecast-tiles">
+				<div class="tile"></div>
+				<div class="tile"></div>
+				<div class="tile"></div>
+				<div class="tile"></div>
+				<div class="tile"></div><br>
+				<div class="tile"></div>
+				<div class="tile"></div>
+				<div class="tile"></div>
+				<div class="tile"></div>
+				<div class="tile"></div>
+			</div>
 		</div>
 	</div>
