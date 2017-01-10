@@ -83,9 +83,15 @@ div.facebox{
 /*body/main*/
 
 body {
-	background-image: url("../assets/mountain-01.jpg");	
-	background-size: 100%;
-	background-repeat: no-repeat;
+	background: url("../assets/mountain-01.jpg") no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+li {
+	list-style: none;
 }
 
 h1 {
@@ -100,7 +106,7 @@ h1 {
 
 .canvas {
 	height: 400px;
-	width: 600px;
+	width: 450px;
 	background-color: rgba(125, 125, 125, 0.5);
 	border-radius: 20px;
 	margin: 0 auto;
@@ -127,6 +133,13 @@ div.canvas > p, h3 {
 	height: 110px;
 	border-radius: 5px;
 	background-color: #eee;
+}
+#hourly-tiles{
+	padding-left: 10px;
+}
+
+#forecast-tiles{
+	padding-left: 10px;
 }
 
 .navText {
