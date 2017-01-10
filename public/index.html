@@ -8,13 +8,14 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<!-- <script src="/bower_components/angular/angular.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-   <!--  <script src="/bower_components/angular-route/angular-route.min.js"></script> -->
+    <!-- <script src="/bower_components/angular-route/angular-route.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script>
 	<script src="/js/client.js"></script>  
 	<script src="/js/controllers/users.js"></script> 
 	<script src="/js/controllers/locations.js"></script> 
 	<script src="/js/controllers/activities.js"></script> 
   <!-- <script src="/js/controllers/weather.js"></script> -->
+
 <!-- Clock script -->
 	<script>
 	function startTime() {
@@ -25,7 +26,7 @@
 	    m = checkTime(m);
 	    s = checkTime(s);
 	    document.getElementById('txt').innerHTML =
-	    h + ":" + m + ":" + s;
+	    h + ":" + m;
 	    var t = setTimeout(startTime, 500);
 		}
 		function checkTime(i) {
@@ -34,12 +35,24 @@
 		}
 </script>
 
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Clock font -->
+<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+
 </head>
 <body ng-app='weatherApp'>
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
-	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <!-- Main nav -->
+
+	    <!-- Hamburger button -->
 	    <div class="navbar-header">
 	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 	        <span class="sr-only">Toggle navigation</span>
@@ -48,104 +61,115 @@
 	        <span class="icon-bar"></span>
 	      </button>
 	    </div>
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	      <ul class="nav navbar-nav">
-	      <!-- LOGO -->
 
-	      	<li><a href="#"><img id="logo" src="./assets/logo.png"></a></li>
+	    <!-- main nav -->
+	    <div class="collapse navbar-collapse row" id="bs-example-navbar-collapse-1">
+	      <!-- <ul class="nav navbar-nav col-md-6"> -->
+	          <!-- LOGO -->
 
-	      <!-- Main nav -->
-	        <li class="navText"><a href="#">Home</a></li>
+		      	<li class"><a href="#"><img id="logo" src="./assets/logo.png"></a></li>
 
-	        <li class="dropdown navText">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Weather<span class="caret"></span></a>
-	          <ul class="dropdown-menu">
-	            <li><a href="#">Action</a></li>
-	            <li><a href="#">Another action</a></li>
-	            <li><a href="#">Something else here</a></li>
-	            <li role="separator" class="divider"></li>
-	            <li><a href="#">Separated link</a></li>
-	            <li role="separator" class="divider"></li>
-	            <li><a href="#">One more separated link</a></li>
-	          </ul>
-	        </li>
-	      </ul>
+			<!-- Buttons -->
+			<ul class="nav navbar-nav col-md-6">
+		        <li class="dropdown navText">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Weather<span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">Action</a></li>
+		            <li><a href="#">Another action</a></li>
+		            <li><a href="#">Something else here</a></li>
+		          </ul>
 
-		  <!-- dropdown -->
-<!-- 
-	<div class="container">
-<nav class="navbar navbar-default" role="navigation"> -->
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-	      	<!-- <li><a href="#"><img id="logo" src="./assets/logo.png"></a> --></li>
-			
+		        </li>
+	        	<li class="dropdown navText">
+	          		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings<b class="caret"></b></a>
+	          			<ul class="dropdown-menu">
+				            <li><a href="#">Action</a></li>
+				            <li><a href="#">Another action</a></li>
+				            <li><a href="#">Something else here</a></li>
+				        </ul>
+	        	</li>
+	        	<li class="navText"><a href="#">Logout</a></li>
 
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-
-      	<a href="#"><img id="logo" src="./assets/logo.png"></a>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">More Weather <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-          </ul>
-        </li>
-      </ul>
-      <!-- <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form> -->
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Logout</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
+	       </ul>
+	     </div>	
+      </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 </div>
 
-	    </div><!-- /.navbar-collapse -->
-	  </div><!-- /.container-fluid -->
-	</nav>
-
 <!-- Temperature -->
-<div class="temperature container">
-	
+<div id="temperature">
+	<form ng-submit="userController.getWeather(location)">
+		<input ng-model="userController.location">
+		<input type="submit" value="Get Weather">
+	</form>
+	<p ng-model="userController.weather.data.temp_f">{{userController.weather.data.temp_f}}</p>
 </div>
 
 
-<!-- CLock -->
+<!-- Message -->
 <div class="main-div container-fluid">
-	<h1>Hi, {{user.first_name}}</h1>
+	<h1 ng-model="userController.oneUser.first_name">Hi, {{userController.oneUser.first_name}}</h1>
 	<body onload="startTime()">
-	<div id="txt"></div>
 </div>
 
+<!-- Clock -->
+<div id="clock-container" class="container-fluid">
+	<div id="txt" class="clock"></div>
+</div>
+
+<!-- NgView -->
 <div>
 	<ng-view></ng-view>
 </div>
+
+<!-- Modal -->
+
+<div class="container modal-container">
+	<div class="row">
+    
+    
+	<div id="myModal" class="modal fade in">
+        <div class="modal-dialog">
+            <div class="modal-content">
+ 
+                <div class="modal-header">
+                    <a class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+                    <h2 class="modal-title center-block">Team COllieWeather</h2>
+                </div>
+                <div class="modal-body">
+                		<div class="facebox">
+                			<img class="faces" src="./assets/merry.png">
+                			<span>Merry Schurr</span>
+                		</div>
+                		<div class="facebox">
+                			<img class="faces" src="./assets/larry.png">
+                			<span>Larry Kraus</span>
+                		</div>
+                		<div class="facebox">
+                			<img class="faces" src="./assets/guy.png">
+                			<span>Guy Liechty</span>
+                		</div>
+                		<div class="facebox">
+                			<img class="faces" src="./assets/micah.png">
+                			<span>Micah Wierenga</span>
+                		</div>
+                		<hr/>
+						<p>Collie Weather was designed by four developers in Colorado who were sick and tired of user-unfriendly, overly complex, and maddeningly abstruse weather apps.</p>
+						<p> 'Hey', they said as a group, 'can't there be a simple app, to tell me basic things like temperature and precipitation, right where I live, or where I'm going for the weekend?' They quickly devised a scheme, and hit the whiteboard, ideas cascading from their permanent markers like buggy error messages populating the console.</p>
+						<p> 'No one wants ALL the weather info you can get, but some want more than others,' Larry thought, outloud, stroking the stubble on his chin meditatively. 'Let the people decide,' Larry said with raised eyebrows and crossed arms.</p>
+						<p> The fully-customizable, user-friendly and activity-specific weather app was born.</p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dalog -->
+    </div><!-- /.modal -->
+    
+<a data-toggle="modal" href="#myModal" class="btn btn-primary center-block">From the Devs</a>
+	</div>
+</div>
+
+<!-- End Modal -->
 
 </body>
 </html>

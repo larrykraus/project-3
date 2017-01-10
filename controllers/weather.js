@@ -16,6 +16,7 @@ function show (req, res) {
 				console.log('This is the body ' + body);
 
 				current_weather = JSON.parse(body).current_observation;
+				console.log(body.current_observation);
 				res.json(current_weather);
 			})
 		});

@@ -1,3 +1,4 @@
+
 /*Dropdown css*/
 
 body {
@@ -12,8 +13,75 @@ body {
 li.dropdown:hover > .dropdown-menu {
     display: block;
 }
-
 /*End Dropdown CSS*/
+
+
+/*Clock CSS*/
+#txt.clock{
+	font-family: 'Orbitron', sans-serif;
+	font-size: 48px;
+	color: white;
+	background-color: rgba(206, 206, 216, 0.2);
+	font-weight: bold;
+}
+
+#clock-container{
+	text-align: center;
+}
+
+/*End CLock css*/
+
+/*Modal CSS*/
+
+.modal .modal-header {
+  border-bottom: none;
+  position: relative;
+}
+.modal .modal-header .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.modal .modal-footer {
+  border-top: none;
+  padding: 0;
+}
+.modal .modal-footer .btn-group > .btn:first-child {
+  border-bottom-left-radius: 0;
+}
+.modal .modal-footer .btn-group > .btn:last-child {
+  border-top-right-radius: 0;
+}
+.faces{
+	width: 100%;
+	-webkit-clip-path: circle(50% at 50% 50%);
+	clip-path: circle(50% at 50% 50%);
+	margin: 0 auto;
+}
+a.btn{
+
+	width: 15%;	
+}
+div.modal-header{
+	text-align: center;
+}
+div.facebox{
+	display: inline-block;
+	width: 24%;
+	text-align: center;
+}
+.modal-container{
+	position:absolute;
+	bottom: 2%;
+	margin: 0 auto;
+}
+/*End Modal CSS*/
+
+/*body/main*/
+
 body {
 	background-image: url("../assets/mountain-01.jpg");	
 	background-size: 100%;
@@ -27,6 +95,7 @@ h1 {
 .navbar {
 	background-color: rgba(0, 0, 0, 0);
 	border: none;
+	padding: 20px;
 }
 
 .canvas {
@@ -61,7 +130,11 @@ div.canvas > p, h3 {
 }
 
 .navText {
-	color: black;
+	font-color: black;
+	font-weight: bold;
+	font-size: 16px;
+	z-index: 1;
+	font-family: 'Orbitron', sans-serif;
 }
 
 .loginFields {
@@ -70,7 +143,7 @@ div.canvas > p, h3 {
 }
 img#logo{
 	float: left;
-	padding: -50px;
+	padding: -200px;
 	display: flex;
 	width: 20%;
 	z-index: 1;
