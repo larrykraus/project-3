@@ -1,32 +1,29 @@
-	<form ng-submit="userController.getWeather(location)">		
-		<input ng-model="userController.location">
-
-		<input type="submit" value="Get Weather">
-	</form>
-	<div class="canvas">
-
-	
-
+<div class="canvas">
 <p ng-model="userController.weather.data.temp_f">{{userController.weather.data.temp_f}}</p>
-		<h3 class="cityname">Denver, CO</h3>
-		<div class="tileContainer">
-			<div class="tile" ng-model="userController.weather.data.temp_f">{{userController.weather.data.temp_f}}</div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile">
-				<p>4pm</p>	
-				<img src="http://icons.wxug.com/i/c/i/partlycloudy.gif">
-				<p>72 - 34</p>
-			</div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-			<div class="tile"></div>
-		</div>
-	</div>
+        <h3 class="cityname">Denver, CO</h3>
+        <div class="tileContainer">
+            <!-- <div class="tile" id ="test" ng-model="userController.weather.data.temp_f">{{userController.weather.data.temp_f}}</div> -->
+
+            <!-- hourly -->
+            <div id="hourly-tiles">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+            <!-- 10 day -->
+            <div id="forecast-tiles">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div><br>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+        </div>
+    </div>
