@@ -42,5 +42,7 @@
     "pg-hstore": "^2.3.2",
     "request": "^2.79.0",
     "sequelize": "^3.28.0"
-  }
+  },
+  "devDependencies": {},
+  "keywords": []
 }
