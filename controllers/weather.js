@@ -2,24 +2,45 @@ var request = require('request');
 var apiKeyWeather = process.env.apiKeyWeather || require('../config/env').key;
 
 function show (req, res) {
-	var vm = this;
-	console.log(req.params.location);
-	var apiUrl = 'http://api.wunderground.com/api/' + apiKeyWeather;
-	var url = apiUrl + '/geolookup/q/' + req.params.location + '.json';
+    var vm = this;
+    var apiUrl = 'http://api.wunderground.com/api/' + apiKeyWeather;
+    var url = apiUrl + '/geolookup/q/' + req.params.location + '.json';
 
-		request(url, function (err, response1, body) {
-			console.log('Here is the body: ' + body);
-			var location = JSON.parse(body).location.requesturl;
-			var conditionsUrl = apiUrl + "/conditions/q/" + location + ".json";
-			request(conditionsUrl, function(err, response2, body) {
+    var weather = [];
 
-				console.log('This is the body ' + body);
+    // Get Location
+    request(url, function (err, response1, body) {
+        console.log('Here is the body: ' + body);
+        var location = JSON.parse(body).location.requesturl;
+        var conditionsUrl = apiUrl + "/conditions/q/" + location + ".json";
+        var hourlyUrl = apiUrl + "/hourly/q/" + location + ".json";
+        var forecastUrl = apiUrl + "/forecast10day/q/" + location + ".json";
 
-				current_weather = JSON.parse(body).current_observation;
-				console.log(body.current_observation);
-				res.json(current_weather);
-			})
-		});
+
+        // Current Conditions
+        request(conditionsUrl, function(err, response2, body1) {
+            current_weather = JSON.parse(body1).current_observation;
+            weather.push(current_weather);
+
+            // Hourly
+            request(hourlyUrl, function(err, response3, body2) {
+                hourly = JSON.parse(body2).hourly_forecast;
+                weather.push(hourly);
+
+                // 10-day Forecast
+                request(forecastUrl, function(err, response4, body3) {
+                    forecast = JSON.parse(body3).forecast;
+                    weather.push(forecast);
+                    res.json(weather);
+
+                })
+
+            })
+
+        })
+        
+    });
+
 }
 
 module.exports.show = show;
