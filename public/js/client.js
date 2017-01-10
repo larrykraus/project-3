@@ -10,7 +10,7 @@ angular.module('weatherApp', ['ngRoute'])
 
 		// Main Routes
 		.when('/', {
-			templateUrl: '/templates/index.html',
+			templateUrl: '/templates/welcome.html',
 			controller: 'UserController as userController'
 		})
 		.when('/login', {
