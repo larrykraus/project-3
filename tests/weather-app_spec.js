@@ -1,9 +1,29 @@
+// var expect = require('chai').expect;
+
+// describe('A basic test', function () {
+// 	it('should pass when everything is okay', function () {
+// 		expect(true).to.be.true;
+// 	});
+// });
+
+// *****************************
 
 // var chai = require('chai');
 // var expect = chai.expect;
-// var Activity = require('./../../user/activity');
-// var Location = require('./../../user/location');
+// var Activity = require('./../../models/activity.js');
+// var Location = require('./../../models/location.js');
+// var User = require('./../../models/user.js');
 
+// describe('User', function() {
+//   it('getSubtotal() should return 0 if no users are passed in', function() {
+//     var user = new User([]);
+//     expect(user.getSubtotal()).to.equal(0);
+//   });
+//   it('getSubtotal() should return 0 if no users are passed in', function() {
+//     var user = new User([]);
+//     expect(user.getSubtotal()).to.equal(0);
+//   });
+// });
 
 // describe('Activity', function() {
 //   it('getSubtotal() should return 0 if no activities are passed in', function() {
