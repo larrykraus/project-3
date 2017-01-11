@@ -24,6 +24,13 @@ angular.module('weatherApp', ['ngRoute'])
 		.when('/admin', {
 			templateUrl: '/templates/admin.html',
 			controller: 'UserController as userController'
+		})
+		// Guy did this, he might have messed up
+		.when('/ski', {
+			templateUrl: '/templates/ski.html',
+			controller: 'SkiController as skiController'
 		});
 
 	});
+
+

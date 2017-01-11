@@ -20,20 +20,25 @@
 	<script>
 	function startTime() {
 	    var today = new Date();
+	    console.log("clock hit");
 	    var h = today.getHours();
 	    var m = today.getMinutes();
 	    var s = today.getSeconds();
 	    m = checkTime(m);
 	    s = checkTime(s);
-	    document.getElementById('txt').innerHTML =
-	    h + ":" + m;
-	    var t = setTimeout(startTime, 500);
-		}
-		function checkTime(i) {
-		    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-		    return i;
-		}
-</script>
+	    // experimental code
+		    if (h >12){
+		    	h = h%12;
+		    }
+		    document.getElementById('txt').innerHTML =
+		    h + ":" + m;
+		    var t = setTimeout(startTime, 500);
+			}
+			function checkTime(i) {
+			    if (i < 10) {i = "0" + i}  // add zero in front of numbers < 10
+			    return i;
+			}
+	</script>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -97,11 +102,6 @@
 </nav>
 </div>
 
-<!-- Clock -->
-<div id="clock-container" class="container-fluid">
-	<div id="txt" class="clock"></div>
-</div>
-
 <!-- NgView -->
 <div>
 	<ng-view></ng-view>
@@ -147,8 +147,16 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dalog -->
     </div><!-- /.modal -->
-    
-<a data-toggle="modal" href="#myModal" class="btn btn-primary center-block col-md-2"><span id="dev-button-text">From the Devs</span></a>
+
+	<!-- Clock -->
+	<body onload="startTime()">
+<!-- 	<div id="clock-container" class="container-fluid"> -->
+		<span id="txt" class="clock"></span>
+<!-- 	</div> -->
+
+    <!-- modal button -->
+	<a data-toggle="modal" href="#myModal" class="btn btn-primary center-block devs col-md-2"><span id="dev-button-text">From the Devs</span></a>	
+
 	</div>
 </div>
 
