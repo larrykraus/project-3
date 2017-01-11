@@ -35,7 +35,7 @@ router.post('/api/locations', locationsController.create);
 router.get('/api/locations/:id', locationsController.show);
 
 // update
-router.put('/api/locations/:id', locationsController.update)
+router.put('/api/locations/:id', locationsController.update);
 
 // destroy
 router.delete('/api/locations/:id', locationsController.destroy);
@@ -53,7 +53,7 @@ router.post('/api/activities', activitiesController.create);
 router.get('/api/activities/:id', activitiesController.show);
 
 // update
-router.put('/api/activities/:id', activitiesController.update)
+router.put('/api/activities/:id', activitiesController.update);
 
 // destroy
 router.delete('/api/activities/:id', activitiesController.destroy);
