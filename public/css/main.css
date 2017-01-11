@@ -1,12 +1,4 @@
-/*Welcome page button*/
-/*.wrap {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -86px;
-  margin-left: -89px;
-  text-align: center;
-}*/
+/*Welcome page button*/		
 
 a.button.welcome-button {
   -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
@@ -25,6 +17,7 @@ a.button.welcome-button {
 a.button.welcome-button {
   color: rgba(30, 22, 54, 0.6);
   box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+  text-align: center;
 }
 
 a.button.welcome-button:hover {
@@ -54,10 +47,14 @@ li.dropdown:hover > .dropdown-menu {
 /*Clock CSS*/
 #txt.clock{
 	font-family: 'Orbitron', sans-serif;
-	font-size: 48px;
+	font-size: 35px;
 	color: white;
-	background-color: rgba(206, 206, 216, 0.2);
+/*	background-color: rgba(206, 206, 216, 0.2);*/
 	font-weight: bold;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin-right: 10px;
 }
 
 #clock-container{
@@ -104,7 +101,7 @@ li.dropdown:hover > .dropdown-menu {
 	clip-path: circle(50% at 50% 50%);
 	margin: 0 auto;
 }
-a.btn{
+a.btn.btn-primary.center-block.devs{
 	width: 15%;	
 	position: fixed;
 	bottom: 0;
