@@ -1,4 +1,30 @@
-	<div class="canvas">
+<div class="canvas">
+	
+	<div class="row">
+
+		<div class="container col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+
+			<h3 class="text-center">Login</h3>
+			<form ng-submit="lc.login()">
+				<div class="form-group">
+					<input type="text" ng-model="lc.new_user.email" class="form-control" placeholder="Email">
+				</div>
+				<div class="form-group">
+					<input type="password" ng-model="lc.new_user.password" class="form-control" placeholder="Password">
+				</div>
+					<input type="submit" value="Log In" class="btn btn-block btn-info">
+			</form>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+<!-- 	<div class="canvas">
 		<div class="loginFields">
 			<h3>Log In</h3>
 			<form class="navbar-form navbar-left" role="search">
@@ -8,14 +34,12 @@
 			  	</div>
 			  	<button type="submit" class="btn btn-default">Submit</button>
 			</form>
-<!-- 		</div>
-		<div> -->
+
 			<br>
 			<h3>Sign Up</h3>
 			<form class="navbar-form navbar-left" role="search">
 			  	<div class="form-group">
-			  		<!-- username will go here eventually 
-			    	<input type="text" class="form-control" placeholder="Username"> -->
+			  		
 			    	<input type="text" class="form-control" placeholder="Email">
 			    	<input type="text" class="form-control" placeholder="Password">
 			    	<input type="text" class="form-control" placeholder="First name">
@@ -25,4 +49,4 @@
 			  	<button type="submit" class="btn btn-default">Submit</button>
 			</form>
 		</div>
-	</div>
+	</div> -->
