@@ -1,8 +1,8 @@
-angular.module('weatherApp', ['ngRoute', 'satellizer', 'ui.router'])
+angular.module('weatherApp', ['satellizer', 'ui.router'])
 	.controller('MainController', MainController)
 	.controller('HomeController', HomeController)
 	.controller('LoginController', LoginController)
-	// .controller('SignupController', SignupController)
+	.controller('SignupController', SignupController)
 	.controller('LogoutController', LogoutController)
 	.controller('ProfileController', ProfileController)
 	.service('Account', Account)
@@ -15,24 +15,24 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
 		requireBase: false
 	});
 
-	$urlRouterProvider.other("/");
+	$urlRouterProvider.otherwise("/");
 
 	$stateProvider
 		.state('home', {
 			url: '/',
-			templateUrl: 'templates/home.html',
+			templateUrl: 'templates/welcome.html',
 			controller: 'HomeController',
 			controllerAs: 'home'
 		})
-		// .state('signup', {
-		// 	url: '/signup',
-		// 	templateUrl: 'templates/signup.html',
-		// 	controller: 'SignupController',
-		// 	controllerAs: 'sc',
-		// 	resolve: {
-		// 		skipIfLoggedIn: skipIfLoggedIn
-		// 	}
-		// })
+		.state('signup', {
+			url: '/signup',
+			templateUrl: 'templates/signup.html',
+			controller: 'SignupController',
+			controllerAs: 'sc',
+			resolve: {
+				skipIfLoggedIn: skipIfLoggedIn
+			}
+		})
 		.state('login', {
 			url: '/login',
 			templateUrl: 'templates/login.html',
@@ -87,6 +87,7 @@ function MainController(Account) {
 	var vm = this;
 
 	vm.currentUser = function() {
+		// console.log(Account.currentUser.displayName);
 		return Account.currentUser();
 	}
 }
@@ -125,6 +126,23 @@ function LoginController($location, Account) {
 			})
 	};
 
+	// vm.signup = function(newUser) {
+	// 	console.log('Hello ' + newUser);
+	// 	Account
+	// 		.signup(vm.new_user)
+	// 		.then(
+	// 			function(response) {
+	// 				vm.new_user = {};
+	// 				$location.path('/profile');
+	// 			})
+	// };
+}
+
+SignupController.$inject = ["$location", "Account"];
+function SignupController($location, Account) {
+	var vm = this;
+	vm.new_user = {};
+
 	vm.signup = function(newUser) {
 		console.log('Hello ' + newUser);
 		Account
@@ -136,23 +154,6 @@ function LoginController($location, Account) {
 				})
 	};
 }
-
-// SignupController.$inject = ["$location", "Account"];
-// function SignupController($location, Account) {
-// 	var vm = this;
-// 	vm.new_user = {};
-
-// 	vm.signup = function(newUser) {
-// 		console.log('Hello ' + newUser);
-// 		Account
-// 			.signup(vm.new_user)
-// 			.then(
-// 				function(response) {
-// 					vm.new_user = {};
-// 					$location.path('/profile');
-// 				})
-// 	};
-// }
 
 LogoutController.$inject = ["$location", "Account"];
 function LogoutController($location, Account) {
@@ -258,7 +259,7 @@ function Account($http, $q, $auth) {
 		return $http.get('/api/me');
 	}
 
-	function updatedProfile(profileData) {
+	function updateProfile(profileData) {
 		return (
 			$http
 				.put('/api/me', profileData)

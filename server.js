@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var hbs = require('hbs');
+var bcrypt = require('bcryptjs');
 var auth = require('./resources/auth');
 var weatherRouter = require('./config/routes.js');
 
@@ -14,21 +15,25 @@ app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'hbs');
 
-
 app.use(weatherRouter);
 // app.use(express.static('public'));
 // app.use(function(req, res) {
 // 	res.sendFile(__dirname + '/public/index.html');
 // });
 
-var User = require('.models/user');
-var Location = require('.models/location');
-var Activity = require('.models/activity');
+// var User = require('./models/user');
+// var Location = require('./models/location');
+// var Activity = require('./models/activity');
+
+var db = require('./models');
+var User = db.models.User;
+var Location = db.models.Location;
+var Activity = db.models.Activity;
 
 
 // API Routes
 
-router.get('/api/me', auth.ensureAuthenticated, function(req, res) {
+app.get('/api/me', auth.ensureAuthenticated, function(req, res) {
 	console.log('Get api/me?')
 	User.findById(req.user, function(err, user) {
 		console.log(user);

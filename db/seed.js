@@ -6,8 +6,7 @@ var userCreate = function() {
 	    password:"micah",
 	    username: "micah",
 	    default_location: "80123",
-	    first_name: "Micah",
-	    last_name: "Wierenga",
+	    displayName: "Micah Wierenga",
 	    admin: true
   	},
     {

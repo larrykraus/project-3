@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="AuthSampleApp">
+<html lang="en" ng-app="weatherApp">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,7 @@
   <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   <!-- custom styles -->
-  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
 
   <!-- jquery -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
@@ -30,7 +30,8 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/satellizer/0.13.4/satellizer.min.js"></script>
 
   <!-- custom script (angular app) -->
-  <script type="text/javascript" src="scripts/app.js"></script>
+  <script src="/js/app.js"></script>  
+  <!-- <script src="/js/controllers/users.js"></script>  -->
 
   <title>Angular Auth</title>
 </head>
@@ -44,14 +45,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">AngularAuth</a>
+        
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
+          <li><a href="/"><img id="logo" src="./assets/logo.png"></a></li>
           <li><a href="/">Home</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li ng-show="!main.currentUser()"><a ui-sref="signup">Sign Up</a></li>
+          <li ng-show="!main.currentUser()"><a ui-sref="signup">Signup</a></li>
           <li ng-show="!main.currentUser()"><a ui-sref="login">Log In</a></li>
           <li ng-show="main.currentUser()"><a ui-sref="profile">\{{main.currentUser().displayName}}</a></li>
           <li ng-show="main.currentUser()"><a ui-sref="logout">Log Out</a></li>

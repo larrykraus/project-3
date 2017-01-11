@@ -4,7 +4,7 @@ var usersController = require('../controllers/users.js');
 var activitiesController = require('../controllers/activities.js');
 var locationsController = require('../controllers/locations.js');
 var weatherController = require('../controllers/weather.js');
-var auth = require('./resources/auth');
+// var auth = require('./resources/auth');
 
 // User Routes
 
