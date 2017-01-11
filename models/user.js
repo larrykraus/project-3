@@ -4,8 +4,7 @@ module.exports = function(sequelize, Sequelize) {
 		password: Sequelize.STRING,
 		username: Sequelize.STRING,
 		default_location: Sequelize.STRING,
-		first_name: Sequelize.STRING,
-		last_name: Sequelize.STRING,
+		displayName: Sequelize.STRING,
 		admin: Sequelize.BOOLEAN
 	})
 	return model;
