@@ -1,5 +1,7 @@
-    <form id="display-form" ng-submit="weather.getWeather(location)">     
-        <input id="display-input" ng-model="weather.location" placeholder="Enter your location/zipcode and press return">
+
+ <form id="display-form" ng-submit="weather.getWeather(location)">     
+        <input id="display-input" ng-model="weather.location" placeholder="city or zip">
+
     </form>
     <div class="canvas">
         <h3 class="cityname">{{weather.weather.data[0].display_location.city}}

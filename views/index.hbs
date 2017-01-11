@@ -47,7 +47,8 @@
   <!-- <script src="/js/controllers/weather.js"></script> -->
 
   <!-- Clock font -->
-  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+ <!--  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet"> -->
+ <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:700" rel="stylesheet">
 
   <!-- Clock script -->
   <script>
@@ -86,15 +87,18 @@
       <!-- main nav -->
       <div class="collapse navbar-collapse row" id="bs-example-navbar-collapse-1">
         
-            <!-- LOGO -->
-        <div class"><a href="#"><img id="logo" src="./assets/logo.png"></a></div>
+      <!-- LOGO -->
+      <div class"><a href="/"><img id="logo" src="./assets/logo.png"></a></div>
+
       <!-- Buttons -->
       <div class="nav-buttons">
         <ul class="nav navbar-nav col-md-6">
-          <li><a href="/">Home</a></li>
-          <li><a href="/display">Weather</a></li>
+          <!-- <li><a href="/">Home</a></li> -->
+          <!-- <li><a href="/display">Weather</a></li> -->
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="/display">Weather</a></li>
+          <li><a href="/ski">Ski</a></li>
           <li ng-show="!main.currentUser()"><a ui-sref="signup">Signup</a></li>
           <li ng-show="!main.currentUser()"><a ui-sref="login">Log In</a></li>
           <li ng-show="main.currentUser()"><a ui-sref="profile">\{{main.currentUser().username}}</a></li>
@@ -111,6 +115,8 @@
   <div id="txt" class="clock"></div>
 </div>
 
+
+
 <!-- ui-view -->
 <div class="container">
     <div class="row">
@@ -118,6 +124,11 @@
         <ui-view>
       </div>
     </div>
+</div>
+
+<!-- FROM THE DEVS MODAL -->
+<div class="dev-modal-container">
+  <a type="button" data-toggle="modal" href="#myModal" class="btn btn-primary center-block"><span id="dev-button-text">From the Devs</span></a>
 </div>
 
 </body>
