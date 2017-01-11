@@ -147,7 +147,7 @@ h1 {
 .navbar {
 	background-color: rgba(0, 0, 0, 0);
 	border: none;
-	padding: 20px;
+	padding: 5px;
 }
 
 .canvas {
@@ -236,7 +236,7 @@ img#logo{
 	float: left;
 	padding: 15px;
 	display: flex;
-	width: 20%;
+	width: 8%;
 	z-index: 1;
 }
 img:hover{
@@ -244,10 +244,13 @@ img:hover{
 	border-radius: 50px;
 }
 nav.navbar.navbar-default{
-/*	background: linear-gradient(rgba(63, 63, 191, .73), rgba(63, 63, 191, 0.23));
-	z-index: 1;
+	/*background: linear-gradient(rgba(63, 63, 191, .73), rgba(63, 63, 191, 0.23));*/
+	background: rgba(206, 206, 216, 0.4);
+	/*z-index: 1;*/
 	position: fixed;
-}*/
+	top: 0;
+	left: 0;
+}
 	background: rgba(206, 206, 216, 0.2);
 	border: none;
 	padding: 0px;
