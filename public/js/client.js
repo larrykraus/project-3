@@ -34,3 +34,5 @@ angular.module('weatherApp', ['ngRoute'])
 	});
 
 
+
+// start animation toggle .slideIn class to start 
