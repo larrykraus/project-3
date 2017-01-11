@@ -390,9 +390,8 @@ img:hover{
 }
 nav.navbar.navbar-default{
 /*	background: linear-gradient(rgba(63, 63, 191, .73), rgba(63, 63, 191, 0.23));
-	z-index: 1;
-	position: fixed;
-}*/
+	z-index: 1;*/
+/*	position: fixed;*/
 	background: rgba(206, 206, 216, 0.2);
 	border: none;
 	padding: 0px;
