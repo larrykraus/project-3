@@ -20,7 +20,6 @@
 	<script>
 	function startTime() {
 	    var today = new Date();
-	    console.log("clock hit");
 	    var h = today.getHours();
 	    var m = today.getMinutes();
 	    var s = today.getSeconds();
@@ -28,7 +27,7 @@
 	    s = checkTime(s);
 	    // experimental code
 		    if (h >12){
-		    	h = h%12;
+		    	h = h-12;
 		    }
 		    document.getElementById('txt').innerHTML =
 		    h + ":" + m;
