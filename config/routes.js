@@ -4,6 +4,7 @@ var usersController = require('../controllers/users.js');
 var activitiesController = require('../controllers/activities.js');
 var locationsController = require('../controllers/locations.js');
 var weatherController = require('../controllers/weather.js');
+var auth = require('./resources/auth');
 
 // User Routes
 
@@ -63,5 +64,6 @@ router.delete('/api/activities/:id', activitiesController.destroy);
 
 // show
 router.get('/api/weather/:location', weatherController.show);
+
 
 module.exports = router;
