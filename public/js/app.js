@@ -5,6 +5,7 @@ angular.module('weatherApp', ['satellizer', 'ui.router'])
 	.controller('SignupController', SignupController)
 	.controller('LogoutController', LogoutController)
 	.controller('ProfileController', ProfileController)
+	.controller('WeatherController', WeatherController)
 	.service('Account', Account)
 	.config(configRoutes);
 
@@ -55,6 +56,15 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
 			templateUrl: 'templates/profile.html',
 			controller: 'ProfileController',
 			controllerAs: 'profile',
+			resolve: {
+				loginRequired: loginRequired
+			}
+		})
+		.state('weather', {
+			url: '/weather',
+			templateUrl: 'templates/weather.html',
+			controller: 'WeatherController',
+			controllerAs: 'weather',
 			resolve: {
 				loginRequired: loginRequired
 			}
@@ -150,7 +160,7 @@ function SignupController($location, Account) {
 			.then(
 				function(response) {
 					vm.new_user = {};
-					$location.path('/profile');
+					$location.path('/weather');
 				})
 	};
 }
@@ -176,6 +186,23 @@ function ProfileController($location, Account) {
 				vm.showEditForm = false;
 			});
 	};
+}
+
+WeatherController.$inject = ["$http", "$location", "Account"];
+function WeatherController($http, $location, Account) {
+	var vm = this;
+	vm.getWeather = getWeather;
+
+	function getWeather(location) {
+		console.log('getWeather');
+		console.log(vm.location);
+		$http
+			.get('/api/weather/' + vm.location)
+			.then(function(response) {
+				vm.weather = response;
+				console.log(vm.weather);
+			});
+	}
 }
 
 
@@ -242,16 +269,18 @@ function Account($http, $q, $auth) {
 		var deferred = $q.defer();
 		getProfile().then(
 			function onSuccess(response) {
+				console.log(response);
 				self.user = response.data;
 				deferred.resolve(self.user);
 			},
 			function onError(response) {
 				$auth.logout();
 				self.user = null;
-				defer.reject();
+				deferred.reject();
 			}
 		)
 		self.user = promise = deferred.promise;
+		console.log(promise);
 		return promise;
 	}
 

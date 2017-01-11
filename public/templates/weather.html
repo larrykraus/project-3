@@ -1,5 +1,5 @@
-	<form ng-submit="userController.getWeather(location)">		
-		<input ng-model="userController.location">
+	<form ng-submit="weather.getWeather(location)">		
+		<input ng-model="weather.location">
 
 		<input type="submit" value="Get Weather">
 	</form>
@@ -7,10 +7,10 @@
 
 	
 
-<p ng-model="userController.weather.data.temp_f">{{userController.weather.data.temp_f}}</p>
+<p ng-model="weather.weather.data.temp_f">{{weather.weather.data.temp_f}}</p>
 		<h3 class="cityname">Denver, CO</h3>
 		<div class="tileContainer">
-			<div class="tile" ng-model="userController.weather.data.temp_f">{{userController.weather.data.temp_f}}</div>
+			<div class="tile" ng-model="weather.weather.data.temp_f">{{weather.weather.data.temp_f}}</div>
 			<div class="tile"></div>
 			<div class="tile"></div>
 			<div class="tile">

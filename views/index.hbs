@@ -49,13 +49,14 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="/"><img id="logo" src="./assets/logo.png"></a></li>
+          <!-- <li><a href="/"><img id="logo" src="./assets/logo.png"></a></li> -->
           <li><a href="/">Home</a></li>
+          <li><a href="/display">Weather</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li ng-show="!main.currentUser()"><a ui-sref="signup">Signup</a></li>
           <li ng-show="!main.currentUser()"><a ui-sref="login">Log In</a></li>
-          <li ng-show="main.currentUser()"><a ui-sref="profile">\{{main.currentUser().displayName}}</a></li>
+          <li ng-show="main.currentUser()"><a ui-sref="profile">\{{main.currentUser().username}}</a></li>
           <li ng-show="main.currentUser()"><a ui-sref="logout">Log Out</a></li>
         </ul>
       </div>
