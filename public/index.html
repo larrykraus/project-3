@@ -65,34 +65,33 @@
 	    <!-- main nav -->
 	    <div class="collapse navbar-collapse row" id="bs-example-navbar-collapse-1">
 	      <!-- <ul class="nav navbar-nav col-md-6"> -->
+	      
 	          <!-- LOGO -->
-
-		      	<li class"><a href="#"><img id="logo" src="./assets/logo.png"></a></li>
-
+		    <div class"><a href="#"><img id="logo" src="./assets/logo.png"></a></div>
 			<!-- Buttons -->
-			<ul class="nav navbar-nav col-md-6">
-		        <li class="dropdown navText">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Weather<span class="caret"></span></a>
-		          <ul class="dropdown-menu">
-		            <li><a href="#">Action</a></li>
-		            <li><a href="#">Another action</a></li>
-		            <li><a href="#">Something else here</a></li>
-		          </ul>
+			<div class="nav-buttons">
+				<ul class="nav navbar-nav col-md-6">
+			        <li class="dropdown navText">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Weather<span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="#">Action</a></li>
+			            <li><a href="#">Another action</a></li>
+			            <li><a href="#">Something else here</a></li>
+			          </ul>
 
-		        </li>
-	        	<li class="dropdown navText">
-	          		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings<b class="caret"></b></a>
-	          			<ul class="dropdown-menu">
-				            <li><a href="#">Action</a></li>
-				            <li><a href="#">Another action</a></li>
-				            <li><a href="#">Something else here</a></li>
-				        </ul>
-	        	</li>
-	        	<li class="navText"><a href="#">Logout</a></li>
-
-
-	       </ul>
-	     </div>	
+			        </li>
+		        	<li class="dropdown navText">
+		          		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings<b class="caret"></b></a>
+		          			<ul class="dropdown-menu">
+					            <li><a href="#">Action</a></li>
+					            <li><a href="#">Another action</a></li>
+					            <li><a href="#">Something else here</a></li>
+					        </ul>
+		        	</li>
+		        	<li class="navText"><a href="#">Logout</a></li>
+		        </ul>
+			</div>
+	    </div>	
       </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
@@ -156,7 +155,7 @@
         </div><!-- /.modal-dalog -->
     </div><!-- /.modal -->
     
-<a data-toggle="modal" href="#myModal" class="btn btn-primary center-block">From the Devs</a>
+<a data-toggle="modal" href="#myModal" class="btn btn-primary center-block col-md-2"><span id="dev-button-text">From the Devs</span></a>
 	</div>
 </div>
 

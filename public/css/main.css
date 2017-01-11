@@ -32,6 +32,14 @@ li.dropdown:hover > .dropdown-menu {
 /*End CLock css*/
 
 /*Modal CSS*/
+@media (max-width: 780px){
+	#dev-button-text {
+		font-size: 10px;
+	}
+	.btn.btn-primary.center-block.col-md-2{
+		width: 100px;
+	}
+}
 
 .modal .modal-header {
   border-bottom: none;
@@ -62,8 +70,11 @@ li.dropdown:hover > .dropdown-menu {
 	margin: 0 auto;
 }
 a.btn{
-
 	width: 15%;	
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	margin: 20px;
 }
 div.modal-header{
 	text-align: center;
@@ -120,7 +131,9 @@ div.canvas > p, h3 {
 
 .cityname {
 	text-align: center;
-
+}
+.statename {
+	text-align: center;
 }
 
 .tileContainer {
@@ -133,7 +146,19 @@ div.canvas > p, h3 {
 	height: 110px;
 	border-radius: 5px;
 	background-color: #eee;
+	margin: 10px auto;
+	padding: 10px;
 }
+
+.tempreading{
+	text-align: center;
+	font-weight: bold;
+}
+.ten-day-tempreading{
+	display: inline;
+	font-weight: bold;
+}
+
 #hourly-tiles{
 	padding-left: 10px;
 }
@@ -156,7 +181,7 @@ div.canvas > p, h3 {
 }
 img#logo{
 	float: left;
-	padding: -200px;
+	padding: 15px;
 	display: flex;
 	width: 20%;
 	z-index: 1;
@@ -171,6 +196,8 @@ nav.navbar.navbar-default{
 	position: fixed;
 }*/
 	background: rgba(165, 165, 165, .6);
+	border: none;
+	padding: 0px;
 }
 .tile > img {
 	margin: 0px auto;
