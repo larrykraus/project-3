@@ -135,7 +135,6 @@ div.slideIn.fifteenth {
     10% { opacity: .9}
   100% { opacity: 1} 
 } 
-
 /*Welcome page button*/		
 
 a.button.welcome-button {
@@ -302,10 +301,10 @@ h3 {
 	width: 460px;
 	background-color: rgba(206, 206, 216, 0.4);
 	border-radius: 20px;
-	/*changed margin from 0 auto*/
 	margin: 0 auto;
 	margin-top: 80px;
 	padding-bottom: 40px;
+
 	text-transform: uppercase;
 }
 
@@ -314,6 +313,10 @@ div.canvas > h3 {
 	padding-right: 20px;
 	height: auto;
 	color: rgba(30, 22, 54, 0.6); 
+
+	/*start off hidden, toggle class to show with form submit*/
+/*	display: none;*/
+
 }
 
 div.canvas > p {
@@ -404,6 +407,7 @@ img#logo{
 	border-radius: 50px;
 }*/
 nav.navbar.navbar-default{
+
 	/*background: linear-gradient(rgba(63, 63, 191, .73), rgba(63, 63, 191, 0.23));
 	background: rgba(206, 206, 216, 0.4);
 	z-index: 1;
@@ -411,6 +415,7 @@ nav.navbar.navbar-default{
 	top: 0;
 	left: 0;
 } */
+
 	background: rgba(206, 206, 216, 0.2);
 	border: none;
 	padding: 0px;
