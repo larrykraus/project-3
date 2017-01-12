@@ -232,25 +232,38 @@ function SkiController($http, $location, Account) {
     var vm = this;
     vm.getSkiWeather = getSkiWeather;
     vm.getSavedResorts = getSavedResorts;
+    vm.getAllResorts = getAllResorts;
 
-    function getSkiWeather(location) {
-        console.log('getSkiWeather');
-        console.log(vm.location);
-        $http
-            .get('/api/ski/' + vm.location)
-            .then(function(response) {
-                vm.skiWeather = response;
-                console.log(vm.skiWeather);
-            });
-    }
 
-    function getSavedResorts() {
-		console.log('getAllUsers');
+    function getAllResorts() {
+		console.log('getAllResorts');
 		$http
 			.get('/api/resorts')
 			.then(function(response) {
 				console.log(response.data);
 				vm.allResorts = response.data;
+			});
+	}
+
+	getAllResorts();
+
+	function getSkiWeather(location) {
+		$http
+			.get('/api/ski/' + vm.location)
+			.then(function(response) {
+				vm.skiWeather = response;
+				console.log(vm.skiWeather);
+			});
+	}
+
+    function getSavedResorts(zip_code) {
+    	console.log(zip_code);
+		console.log('getAllUsers');
+		$http
+			.get('/api/resorts/' + zip_code)
+			.then(function(response) {
+				console.log(response.data);
+				vm.savedResorts = response.data;
 			});
 	}
 
@@ -294,9 +307,10 @@ function AdminController($http, $location, $routeParams, Account) {
 	// Delete User
 
 	function deleteUser(user) {
+		console.log(user.id);
 		console.log('deleteUser');
 		$http
-			.get('api/users/' + user.id)
+			.get('/api/users/' + user.id)
 			.then(function(response) {
 				var userIndex = vm.allUsers.indexOf(user);
 				vm.allUsers.splice(userIndex, 1);
@@ -364,7 +378,7 @@ function Account($http, $q, $auth) {
 				.signup(userData)
 				.then(
 					function onSuccess(response) {
-						// self.currentUser_id = response.data.user.id;
+						console.log(response);
 						$auth.setToken(response.data.token);
 					},
 					function onError(error) {

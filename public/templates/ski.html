@@ -1,30 +1,41 @@
 <div class="canvas">
 	<div class="row">
-		<div class="resort-box col-md-6">
-			<form class="add-resort-form">
+		<div class="resort-box col-md-12">
+			<!-- <form class="add-resort-form" ng-submit="ski.getSkiWeather()">
 
 		        <select>
-		            <option ng-repeat="resort in ski.allResorts">{{resort.name}}</option> 
+		            <option ng-repeat="resort in ski.allResorts" >{{resort.zip_code}}</option>
 		        </select>
+		        <input ng-model="ski.resort.name">
 				<br>
-		        <input ng-model="weather.location" type="submit" value="Add Resort" ng-submit="ski.getSkiWeather(location)">
-	        </form>
+		        <input type="submit" value="Add Resort">
+	        </form> -->
+
+	        <form id="display-form" ng-submit="ski.getSkiWeather(location)">		
+				<input id="display-input" ng-model="ski.location" placeholder="Enter resort zip code">
+			</form>
 	    </div>
 
-		<div class="resort-box col-md-6" ng-repeat="favorite in ski.favoriteResorts">
+	    <br>
 
-	        <h4>{{favorite.name}}</h4>
+		<div class="resort-box col-md-12" >
 
-	        <div class="resort-tile col-md-4">
-	        	{{skiWeather.temperature}}
+
+	        <h3 class="cityname">{{ski.skiWeather.data[0].display_location.city}}</h3>
+
+	        <div class="resort-tile slideIn first">
+	        	<h6>Current Temperature</h6>
+	        	{{ski.skiWeather.data[1][0].temp.english}}
 	        </div>
 
-	        <div class="resort-tile col-md-4">
-	        	{{skiWeather.snow}}
+	        <div class="resort-tile slideIn second">
+	        	<h6>Current Snowfall</h6>
+	        	{{ski.skiWeather.data[1][0].snow.english}}
 	        </div>
 
-	        <div class="resort-tile col-md-4">
-				{{skiWeather.wind}}
+	        <div class="resort-tile slideIn third">
+	        	<h6>Current Wind Speed</h6>
+				{{ski.skiWeather.data[1][0].wspd.english}}
 	        </div>
 
 	    </div>

@@ -485,6 +485,16 @@ div.canvas > p, h3 {
 	padding: 10px;
 }
 
+.resort-tile {
+	display: inline-block;
+	width: 32%;
+	height: 110px; 
+	border-radius: 5px;
+	background-color: #eee;
+	margin: 10px auto;
+	padding: 10px;
+}
+
 .tempreading{
 	text-align: center;
 	font-weight: bold;

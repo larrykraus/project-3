@@ -29,10 +29,12 @@ var Activity = db.models.Activity;
 
 app.get('/api/me', auth.ensureAuthenticated, function(req, res) {
 	console.log('Get api/me?')
-	User.findById(req.user, function(err, user) {
-		console.log(user);
-		res.send(user.populate('resorts')); // ******Should this be ski resort favorites?
-	});
+
+  User.findById(req.user)
+  .then(function(user){
+    if(!user) res.send("not found");
+    res.json(user);
+  }); 
 });
 
 app.put('/api/me', auth.ensureAuthenticated, function(req, res) {
