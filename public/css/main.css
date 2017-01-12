@@ -1,5 +1,11 @@
 /*Tech Modal Start CSS*/
 
+.tech-btn.btn {
+	color: rgba(30, 22, 54, 0.6);
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: bold;
+}
+
 .centered{
 	text-align: center;
 }
@@ -495,7 +501,7 @@ div.canvas > p {
 }
 #display-input{
 	width: 450px;
-	height: 30px;
+	height: 35px;
 	font-weight: bold;
 	text-align: center;
 	border-radius: 10px;
