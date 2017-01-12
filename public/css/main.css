@@ -3,22 +3,23 @@
 .centered{
 	text-align: center;
 }
-.modal  {
+/**/
+.modal.a  {
     /*   display: block;*/
     padding-right: 0px;
     }
    
-    .modal-dialog {
+    .modal.a-dialog {
             top: 20%;
                 width: 100%;
     position: absolute;
         }
-        .modal-content {
+        .modal.a-content {
                 border-radius: 40px;
                 border: none;
     top: 40%;
             }
-            .modal-body {
+            .modal.a-body {
                     background-color: #0f8845;
                 }
                
