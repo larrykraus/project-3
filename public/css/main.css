@@ -239,7 +239,11 @@ a.button.welcome-button {
   max-width: 180px;
   text-decoration: none;
   border-radius: 4px;
-  padding: 20px 30px;
+  padding: 10px 20px;
+  height: 40px;
+  color: rgba(30, 22, 54, 0.6);
+  box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+  text-align: center;
 }
 
 a.button.welcome-button {
@@ -388,7 +392,7 @@ body {
     -o-background-size: cover;
     background-size: cover;
     background-attachment: fixed;
-    background-color: 227, 224, 219;
+    background-color: rgb(234, 234, 234);
 }
 
 li {
@@ -406,24 +410,32 @@ li {
 }*/
 
 h3 {
+	color: rgba(30, 22, 54, 0.6);
+	text-transform: uppercase;
+	text-align: center;
+}
+p {
 	color: rgba(30, 22, 54, 0.6);  
+	text-align: center;
+	letter-spacing: -.5px;  
 }
 
 .text-center {
     text-align: center;
     color: rgba(30, 22, 54, 0.6);  
+    letter-spacing: -.5px;
 }
 
 .canvas {
 	height: auto;
 	width: 460px;
-	background-color: rgba(206, 206, 216, 0.5);
+	background-color: rgba(206, 206, 216, 0.4);
 	border-radius: 20px;
 	margin: 0 auto;
 	margin-top: 80px;
 	padding-bottom: 40px;
 /*	display: none;*/
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 }
 /*.canvas.on{
 	display: block;
@@ -434,6 +446,8 @@ div.canvas > h3 {
 	padding-right: 20px;
 	height: auto;
 	color: rgba(30, 22, 54, 0.6); 
+	text-transform: uppercase;
+	letter-spacing: -.5px;
 
 	/*start off hidden, toggle class to show with form submit*/
 /*	display: none;*/
@@ -441,10 +455,12 @@ div.canvas > h3 {
 }
 
 div.canvas > p {
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 50px;
+	padding-right: 50px;
 	height: auto;
 	color: rgba(30, 22, 54, 0.6); 
+	font-weight: 500;
+	letter-spacing: -.5px;
 }
 
 /*styling for display input search*/
@@ -455,12 +471,14 @@ div.canvas > p {
 }
 #display-input{
 	width: 450px;
-	height: 60px;
+	height: 30px;
 	font-weight: bold;
 	text-align: center;
 	border-radius: 10px;
 	text-transform: uppercase;
-	font-weight: 700;
+	font-weight: bold;
+	font-family: 'Source Sans Pro', sans-serif;
+	margin-top: 20px;
 }
 
 /*end styling display input search*/
@@ -553,6 +571,7 @@ nav.navbar.navbar-default{
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 10px;
+	background-color: : rgb(30, 20, 56);
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -569,3 +588,34 @@ nav.navbar.navbar-default{
 	text-align: center;
 }
 
+/*LOGIN FORM*/
+.btn-info {
+	border-color: rgba(30, 22, 54, 0.6);
+}
+.btn-info:active {
+    border-color: rgba(30, 22, 54, 0.6);
+}
+.btn-info:focus {
+    border-color: rgba(30, 22, 54, 0.6);
+}
+.btn-info:hover {
+	border-color: rgba(30, 22, 54, 0.6);
+}
+.btn-info:active:focus{
+	border-color: rgba(30, 22, 54, 0.6);
+}
+.btn:active:focus, .btn:focus {
+	outline-offset: -100px;
+}
+.btn.btn-block.btn-info {
+	background-color: rgba(30, 22, 54, 0.6);
+	text-transform: uppercase;
+	
+}
+.btn.btn-block.btn-info:hover {
+    background-color: rgba(30, 22, 54, 0.7);
+}
+/*SIGNUP FORM*/
+.text-center {
+	text-transform: uppercase;
+}
