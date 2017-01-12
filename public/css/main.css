@@ -459,12 +459,10 @@ p {
 	margin: 0 auto;
 	margin-top: 80px;
 	padding-bottom: 40px;
-/*	display: none;*/
-	/*text-transform: uppercase;*/
 }
-/*.canvas.on{
-	display: block;
-}*/
+.weather.canvas{
+	display: none;
+}
 
 div.canvas > h3 {
 	padding-left: 20px;
