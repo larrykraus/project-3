@@ -310,7 +310,6 @@ function Account($http, $q, $auth) {
 
 
 
-
 	// .config(function($routeProvider, $locationProvider) {
 	// 	console.log('Yippee client.js')
 	// 	$locationProvider.html5Mode({

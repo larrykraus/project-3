@@ -4,19 +4,25 @@
 	<p class ="welcome-text">We made this app to make your life easier. Just set a city, then what you want to see. We'll handle the rest.</p>
 	<br>
 	<div class="row">
-		<div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-5 col-xs-offset-1">
-			<a href="/signup" class="button welcome-button">Signup</a>
+		<div id="signup-btn" class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-5 col-xs-offset-1">
+			<a href="/signup" class="button welcome-button"><strong>SIGNUP</strong></a>
 		</div>
-		<div class="col-md-5 col-sm-5 col-xs-5">
-			<a href="/login" class="button welcome-button">Login</a>
+		<div id="login-btn" class="col-md-5 col-sm-5 col-xs-5">
+			<a href="/login" class="button welcome-button"><strong>LOGIN</strong></a>
 		</div>
 	</div>
+    <div class="row">
+        <div class="abt-tech">
+
+            
+        </div>
+    </div>
 </div>
 
 <!-- Modal -->
 
 <div class="container modal-container">
-	<div class="row">
+	<div class="row modal-row">
     
     
 	<div id="myModal" class="modal fade in">
@@ -28,27 +34,56 @@
                     <h2 class="modal-title center-block">Team COllieWeather</h2>
                 </div>
                 <div class="modal-body">
-                		<div class="facebox">
-                			<img class="faces" src="./assets/merry.png">
-                			<span>Merry Schurr</span>
-                		</div>
-                		<div class="facebox">
-                			<img class="faces" src="./assets/larry.png">
-                			<span>Larry Kraus</span>
-                		</div>
-                		<div class="facebox">
-                			<img class="faces" src="./assets/guy.png">
-                			<span>Guy Liechty</span>
-                		</div>
-                		<div class="facebox">
-                			<img class="faces" src="./assets/micah.png">
-                			<span>Micah Wierenga</span>
-                		</div>
-                		<hr/>
-						<p>Collie Weather was designed by four developers in Colorado who were sick and tired of user-unfriendly, overly complex, and maddeningly abstruse weather apps.</p>
-						<p> 'Hey', they said as a group, 'can't there be a simple app, to tell me basic things like temperature and precipitation, right where I live, or where I'm going for the weekend?' They quickly devised a scheme, and hit the whiteboard, ideas cascading from their permanent markers like buggy error messages populating the console.</p>
-						<p> 'No one wants ALL the weather info you can get, but some want more than others,' Larry thought, outloud, stroking the stubble on his chin meditatively. 'Let the people decide,' Larry said with raised eyebrows and crossed arms.</p>
-						<p> The fully-customizable, user-friendly and activity-specific weather app was born.</p>
+                    <div class="row row-faces">
+
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="hovereffect">
+                                <img class="img-responsive faces" src="./assets/merry.png">
+                                <div class="overlay">
+                                   <a class="info" href="#">portfolio</a>
+                                </div>
+                                <br>
+                                <span class="names">Merry Schurr</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="hovereffect">
+                                <img class="img-responsive faces" src="./assets/larry.png">
+                                <div class="overlay">
+                                   <a class="info" href="http://www.larrykraus.com">portfolio</a>
+                                </div>
+                                <br>
+                                <span class="names">Larry Kraus</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="hovereffect">
+                                <img class="img-responsive faces" src="./assets/guy.png">
+                                <div class="overlay">
+                                   <a class="info" href="http://www.guyliechty.com">portfolio</a>
+                                </div>
+                                <br>
+                                <span class="names">Guy Liechty</span>
+                            </div>
+                        </div>
+
+                        <div class="facebox col-md-3 col-sm-3 col-xs-3">
+                            <div class="hovereffect">
+                                <img class="img-responsive faces" src="./assets/micah.png">
+                                <div class="overlay">
+                                   <a class="info" href="http://www.micahwierenga.com">portfolio</a>
+                                </div>
+                                <br>
+                                <span class="names">Micah Wierenga</span>
+                            </div>
+                        </div>
+                		
+                    </div>
+            		<hr/>
+					<p>Collie Weather was designed by four developers in Colorado who were sick and tired of user-unfriendly, overly complex, and maddeningly abstruse weather apps.</p>
+					<p> 'Hey', they said as a group, 'can't there be a simple app, to tell me basic things like temperature and precipitation, right where I live, or where I'm going for the weekend?' They quickly devised a scheme, and hit the whiteboard, ideas cascading from their permanent markers like buggy error messages populating the console.</p>
+					<p> 'No one wants ALL the weather info you can get, but some want more than others,' Larry thought, outloud, stroking the stubble on his chin meditatively. 'Let the people decide,' Larry said with raised eyebrows and crossed arms.</p>
+					<p> The fully-customizable, user-friendly and activity-specific weather app was born.</p>
                 </div><!-- /.modal-body -->
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
