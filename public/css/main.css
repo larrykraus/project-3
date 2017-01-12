@@ -1,3 +1,14 @@
+/*Tech Modal Start CSS*/
+
+.centered{
+	text-align: center;
+}
+
+
+/*End Tech Modal CSS*/
+
+
+
 /*face:hover css*/
 .hovereffect {
 width:100%;
@@ -30,7 +41,6 @@ transition:all .4s linear;
 }
 
 .hovereffect h2 {
-text-transform:uppercase;
 color:#fff;
 text-align:center;
 position:relative;
@@ -47,7 +57,6 @@ padding:10px;
 .hovereffect a.info {
 text-decoration:none;
 display:inline-block;
-text-transform:uppercase;
 color:#fff;
 border:1px solid #fff;
 background-color:transparent;
@@ -280,7 +289,7 @@ li.dropdown:hover > .dropdown-menu {
 /*	background-color: rgba(206, 206, 216, 0.2);*/
 	font-weight: bold;
 	position: fixed;
-	bottom: 10%;
+	bottom: 5%;
 	right: 0;
 	margin-right: 10px;
 }
@@ -332,7 +341,7 @@ li.dropdown:hover > .dropdown-menu {
 a.btn.btn-primary.center-block{
 	width: 120px;	
 	position: fixed;
-	bottom: 10%;
+	bottom: 5%;
 	left: 0;
 	margin: 8px 20px;
 }
