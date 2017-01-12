@@ -324,6 +324,11 @@ li.dropdown:hover > .dropdown-menu {
 	clip-path: circle(50% at 50% 50%);
 	margin: 0 auto;
 }
+#myModal{
+
+}
+
+
 a.btn.btn-primary.center-block{
 	width: 120px;	
 	position: fixed;
@@ -333,6 +338,10 @@ a.btn.btn-primary.center-block{
 }
 div.modal-header{
 	text-align: center;
+	background: rgba(206, 206, 216, 0.2);
+}
+div.modal-body{
+	background: rgba(206, 206, 216, 0.2);
 }
 div.facebox{
 	display: inline-block;
@@ -413,9 +422,12 @@ h3 {
 	margin: 0 auto;
 	margin-top: 80px;
 	padding-bottom: 40px;
-
+/*	display: none;*/
 	text-transform: uppercase;
 }
+/*.canvas.on{
+	display: block;
+}*/
 
 div.canvas > h3 {
 	padding-left: 20px;
@@ -438,12 +450,12 @@ div.canvas > p {
 /*styling for display input search*/
 #display-form {
 	text-align: center;
-	color: red;
+	color: black;
 
 }
 #display-input{
 	width: 450px;
-	height: 30px;
+	height: 60px;
 	font-weight: bold;
 	text-align: center;
 	border-radius: 10px;
@@ -507,9 +519,20 @@ img#logo{
 	float: left;
 	padding: 15px;
 	display: flex;
-	width: 8%;
-	z-index: 1;
+	height: 15%;
+	position: absolute;
+	top: 0;
 }
+
+@media (max-width: 400px){
+	img#logo{
+		height: 8%;
+	}
+	#display-input{
+		width: ;
+	}
+}
+
 /*img:hover{
 	background: rgba(206, 206, 216, 0.2); 
 	border-radius: 50px;
