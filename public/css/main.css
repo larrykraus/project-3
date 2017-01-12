@@ -538,6 +538,7 @@ div.canvas > p {
 	background-color: #eee;
 	margin: 10px auto;
 	padding: 10px;
+}
 
 .tile-hour{
 	font-size: 12px;
@@ -581,9 +582,11 @@ img#logo{
 	img#logo{
 		height: 8%;
 	}
+	/*
 	#display-input{
 		width: ;
 	}
+	*/
 }
 
 /*img:hover{
