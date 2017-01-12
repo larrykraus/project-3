@@ -189,7 +189,7 @@ li.dropdown:hover > .dropdown-menu {
 /*	background-color: rgba(206, 206, 216, 0.2);*/
 	font-weight: bold;
 	position: fixed;
-	bottom: 0;
+	bottom: 10%;
 	right: 0;
 	margin-right: 10px;
 }
@@ -201,14 +201,6 @@ li.dropdown:hover > .dropdown-menu {
 /*End CLock css*/
 
 /*Modal CSS*/
-@media (max-width: 780px){
-	#dev-button-text {
-		font-size: 10px;
-	}
-	.btn.btn-primary.center-block.col-md-2{
-		width: 100px;
-	}
-}
 
 
 .modal .modal-header {
@@ -239,12 +231,12 @@ li.dropdown:hover > .dropdown-menu {
 	clip-path: circle(50% at 50% 50%);
 	margin: 0 auto;
 }
-a.btn.btn-primary.center-block.devs{
-	width: 15%;	
+a.btn.btn-primary.center-block{
+	width: 120px;	
 	position: fixed;
-	bottom: 0;
+	bottom: 10%;
 	left: 0;
-	margin: 20px;
+	margin: 8px 20px;
 }
 div.modal-header{
 	text-align: center;
@@ -259,6 +251,18 @@ div.facebox{
 	bottom: 2%;
 	margin: 0 auto;
 }
+@media (max-width: 780px){
+	#dev-button-text {
+		font-size: 10px;
+	}
+	a.btn.btn-primary.center-block{
+		width: 85px;
+	}
+	div.canvas{
+		width: 50%;
+	}
+}
+
 /*End Modal CSS*/
 
 /*body/main*/
