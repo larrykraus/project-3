@@ -41,6 +41,7 @@ function update(req, res) {
 };
 
 function destroy(req, res) {
+	console.log("here is the req.params.id" + req.params.id);
 	console.log('Yippee destroy');
 	User.findById(req.params.id)
 	    .then(function(user) {

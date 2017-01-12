@@ -1,4 +1,4 @@
-angular.module('weatherApp', ['satellizer', 'ui.router'])
+angular.module('weatherApp', ['satellizer', 'ui.router', 'ngRoute'])
 	.controller('MainController', MainController)
 	.controller('HomeController', HomeController)
 	.controller('LoginController', LoginController)
@@ -6,11 +6,14 @@ angular.module('weatherApp', ['satellizer', 'ui.router'])
 	.controller('LogoutController', LogoutController)
 	.controller('ProfileController', ProfileController)
 	.controller('WeatherController', WeatherController)
+	.controller('AdminController', AdminController)
+	.controller('SkiController', SkiController)
 	.service('Account', Account)
 	.config(configRoutes);
 
 configRoutes.$inject = ["$stateProvider", "$urlRouterProvider", "$locationProvider"];
 function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
+	
 	$locationProvider.html5Mode({
 		enabled: true,
 		requireBase: false
@@ -69,6 +72,24 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
 				loginRequired: loginRequired
 			}
 		})
+		.state('ski', {
+			url: '/ski',
+			templateUrl: 'templates/ski.html',
+			controller: 'SkiController',
+			controllerAs: 'ski',
+			// resolve: {
+			// 	loginRequired: loginRequired
+			// }
+		})
+		.state('admin', {
+			url: '/admin',
+			templateUrl: 'templates/admin.html',
+			controller: 'AdminController',
+			controllerAs: 'admin',
+			// resolve: {
+			// 	loginRequired: loginRequired
+			// }
+		})
 
 		function skipIfLoggedIn($q, $auth) {
 			var deferred = $q.defer();
@@ -97,7 +118,7 @@ function MainController(Account) {
 	var vm = this;
 
 	vm.currentUser = function() {
-		// console.log(Account.currentUser.displayName);
+		alert(Account.currentUser());
 		return Account.currentUser();
 	}
 }
@@ -152,13 +173,14 @@ SignupController.$inject = ["$location", "Account"];
 function SignupController($location, Account) {
 	var vm = this;
 	vm.new_user = {};
+	console.log(vm.username);
 
 	vm.signup = function(newUser) {
-		console.log('Hello ' + newUser);
 		Account
 			.signup(vm.new_user)
 			.then(
 				function(response) {
+					console.log(response);
 					vm.new_user = {};
 					$location.path('/weather');
 				})
@@ -205,6 +227,135 @@ function WeatherController($http, $location, Account) {
 	}
 }
 
+SkiController.$inject = ["$http", "$location", "Account"];
+function SkiController($http, $location, Account) {
+    var vm = this;
+    vm.getSkiWeather = getSkiWeather;
+    vm.getSavedResorts = getSavedResorts;
+    vm.getAllResorts = getAllResorts;
+
+
+    function getAllResorts() {
+		console.log('getAllResorts');
+		$http
+			.get('/api/resorts')
+			.then(function(response) {
+				console.log(response.data);
+				vm.allResorts = response.data;
+			});
+	}
+
+	getAllResorts();
+
+	function getSkiWeather(location) {
+		$http
+			.get('/api/ski/' + vm.location)
+			.then(function(response) {
+				vm.skiWeather = response;
+				console.log(vm.skiWeather);
+			});
+	}
+
+    function getSavedResorts(zip_code) {
+    	console.log(zip_code);
+		console.log('getAllUsers');
+		$http
+			.get('/api/resorts/' + zip_code)
+			.then(function(response) {
+				console.log(response.data);
+				vm.savedResorts = response.data;
+			});
+	}
+
+	getSavedResorts();
+    // function getSavedResorts(){
+    //     console.log("getSavedResorts");
+
+
+    //     vm.currentUser = function() {
+    //     // console.log(Account.currentUser.displayName);
+    //     return Account.currentUser();
+    // }
+    //     $http
+    //         .get('/api/ski/resorts')
+    // }
+}
+
+AdminController.$inject = ["$http", "$location", "$routeParams", "Account"];
+function AdminController($http, $location, $routeParams, Account) {
+	var vm = this;
+	vm.getAllUsers = getAllUsers;
+	vm.deleteUser = deleteUser;
+	vm.getOneUser = getOneUser;
+	vm.getUser = getUser;
+	vm.updateUser = updateUser;
+
+	// Index Users
+
+	function getAllUsers() {
+		console.log('getAllUsers');
+		$http
+			.get('/api/users')
+			.then(function(response) {
+				console.log(response.data);
+				vm.allUsers = response.data;
+			});
+	}
+
+	getAllUsers();
+
+	// Delete User
+
+	function deleteUser(user) {
+		console.log(user.id);
+		console.log('deleteUser');
+		$http
+			.get('/api/users/' + user.id)
+			.then(function(response) {
+				var userIndex = vm.allUsers.indexOf(user);
+				vm.allUsers.splice(userIndex, 1);
+			})
+	}
+
+	// Show One User
+
+	function getOneUser(user) {
+		console.log('getOneUser');
+		$http
+			.get('/api/users/' + $routeParams.id)
+			.then(function(response) {
+				vm.oneUser = repsonse.data;
+			});
+	}
+
+	// Update User
+
+	function getUser() {
+		console.log('getUser');
+		$http
+			.get('/api/users/' + $routeParams.id)
+			.then(function(response) {
+				vm.updatedUser = response.data;
+			});
+	}
+
+	function updateUser(user) {
+		console.log('updateUser');
+		console.log(user);
+		$http
+			.get('/api/users/' + user.id, vm.user)
+			.then(function(response) {
+				var user = response.data;
+				$location.path('/admin');
+			});
+
+	getUser();
+
+	}
+
+
+}
+
 
 
 
@@ -243,10 +394,11 @@ function Account($http, $q, $auth) {
 				.login(userData)
 				.then(
 					function onSuccess(response) {
+						self.currentUser_id = response.data.user.id;
 						$auth.setToken(response.data.token);
 					},
 					function onError(error) {
-						console.log(error);
+						console.error(error); // Is this supposed to be console.log?
 					}
 				)
 		);
@@ -269,18 +421,17 @@ function Account($http, $q, $auth) {
 		var deferred = $q.defer();
 		getProfile().then(
 			function onSuccess(response) {
-				console.log(response);
+				console.log(response.data);
 				self.user = response.data;
 				deferred.resolve(self.user);
 			},
-			function onError(response) {
+			function onError() {
 				$auth.logout();
 				self.user = null;
 				deferred.reject();
 			}
 		)
 		self.user = promise = deferred.promise;
-		console.log(promise);
 		return promise;
 	}
 

@@ -26,6 +26,7 @@ module.exports = {
       return res.status(401).send({ message: 'Token has expired.' });
     }
     req.user = payload.sub;
+    console.log("is this the req.user: " + req.user)
     next();
   },
 
@@ -34,7 +35,7 @@ module.exports = {
   */
   createJWT: function (user) {
     var payload = {
-      sub: user._id,
+      sub: user.id,
       iat: moment().unix(),
       exp: moment().add(14, 'days').unix()
     };

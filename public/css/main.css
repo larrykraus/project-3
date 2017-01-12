@@ -240,6 +240,7 @@ div.slideIn.fifteenth {
   -webkit-animation-delay: 0s, 4s;
   -o-animation-delay: 0s, 4s;*/
 }
+
 @keyframes hide
 { 
   from { opacity: 0; } to { opacity: 0 }
@@ -529,11 +530,21 @@ div.canvas > p {
 	padding: 10px;
 }
 
+.resort-tile {
+	display: inline-block;
+	width: 32%;
+	height: 110px; 
+	border-radius: 5px;
+	background-color: #eee;
+	margin: 10px auto;
+	padding: 10px;
+
 .tile-hour{
 	font-size: 12px;
 }
 .forecast-day{
 	font-size: 10px;
+
 }
 
 .tempreading{
