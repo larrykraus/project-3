@@ -217,10 +217,7 @@ function WeatherController($http, $location, Account) {
 
 	function getWeather(location) {
 		console.log('getWeather');
-
-		$('.weather.canvas').removeClass('weather');
-		// jquery
-		console.log("hit");
+		console.log(vm.location);
 		$http
 			.get('/api/weather/' + vm.location)
 			.then(function(response) {
@@ -455,7 +452,15 @@ function Account($http, $q, $auth) {
 	}
 }
 
-// for toggling classes (main tiles)
+//  for Tech Modal
+
+
+
+// 
+
+
+
+
 
 
 
