@@ -21,7 +21,7 @@ var pg = require('pg');
 // var sequelize = new Sequelize('postgres://micahwierenga@localhost:5432/project-3');
 
 
-var sequelize = new Sequelize(process.env.HEROKU_POSTGRESQL_YELLOW_URL || 'postgres://Merry@localhost:5432/project3', {
+var sequelize = new Sequelize(process.env.HEROKU_POSTGRESQL_YELLOW_URL || 'postgres://Larry@localhost:5432/project3', {
 
 	dialect: 'postgres',
 	protocol: 'postgres',
