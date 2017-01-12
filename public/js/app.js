@@ -452,8 +452,11 @@ function Account($http, $q, $auth) {
 	}
 }
 
+//  for Tech Modal
 
 
+
+// 
 
 
 

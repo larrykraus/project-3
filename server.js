@@ -164,7 +164,12 @@ app.post('/auth/login', function(req, res) {
               res.send({
                  token: auth.createJWT(user)
               });
-           }
+            }
+            else if (isMatch === false) {
+              console.log("invalid passwoooorrrrddd");
+              res.send({ message: 'invalid pword'});
+            }
+           
         });
      };
      validPassword();
