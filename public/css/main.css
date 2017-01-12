@@ -475,6 +475,13 @@ div.canvas > p {
 	padding: 10px;
 }
 
+.tile-hour{
+	font-size: 12px;
+}
+.forecast-day{
+	font-size: 10px;
+}
+
 .tempreading{
 	text-align: center;
 	font-weight: bold;

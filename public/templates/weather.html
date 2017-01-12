@@ -13,28 +13,28 @@
         <h3>Hourly Forecast</h3>
             <div id="hourly-tiles">
                 <div class="tile slideIn first">
-                    <p>{{weather.weather.data[1][0].FCTTIME.civil}}</p>
+                    <p class="tile-hour">{{weather.weather.data[1][0].FCTTIME.civil}}</p>
                     <img src="{{weather.weather.data[1][0].icon_url}}">
                     <p class="tempreading">
                     {{weather.weather.data[1][0].temp.english}}</p>
                 </div>
                 <div class="tile slideIn second">
-                    <p>{{weather.weather.data[1][1].FCTTIME.civil}}</p>
+                    <p class="tile-hour">{{weather.weather.data[1][1].FCTTIME.civil}}</p>
                     <img src="{{weather.weather.data[1][1].icon_url}}">
                     <p class="tempreading">{{weather.weather.data[1][1].temp.english}}</p>
                 </div>
                 <div class="tile slideIn third">
-                    <p>{{weather.weather.data[1][2].FCTTIME.civil}}</p>
+                    <p class="tile-hour">{{weather.weather.data[1][2].FCTTIME.civil}}</p>
                     <img src="{{weather.weather.data[1][2].icon_url}}">
                     <p class="tempreading">{{weather.weather.data[1][2].temp.english}}</p>
                 </div>
                 <div class="tile slideIn fourth">
-                    <p>{{weather.weather.data[1][3].FCTTIME.civil}}</p>
+                    <p class="tile-hour">{{weather.weather.data[1][3].FCTTIME.civil}}</p>
                     <img src="{{weather.weather.data[1][3].icon_url}}">
                     <p class="tempreading">{{weather.weather.data[1][3].temp.english}}</p>
                 </div>
                 <div class="tile slideIn fifth">
-                    <p>{{weather.weather.data[1][4].FCTTIME.civil}}</p>
+                    <p class="tile-hour">{{weather.weather.data[1][4].FCTTIME.civil}}</p>
                     <img src="{{weather.weather.data[1][4].icon_url}}">
                     <p class="tempreading">{{weather.weather.data[1][4].temp.english}}</p>
                 </div>
@@ -43,61 +43,61 @@
         <h3>10 Day Forecast</h3>
             <div id="forecast-tiles">
                 <div class="tile slideIn sixth">
-                    <p>{{weather.weather.data[2].simpleforecast.forecastday[0].date.weekday}}</p>
+                    <p class="forecast-day">{{weather.weather.data[2].simpleforecast.forecastday[0].date.weekday}}</p>
                     <img src="{{weather.weather.data[2].simpleforecast.forecastday[0].icon_url}}">
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[0].low.fahrenheit}}</p>
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[0].high.fahrenheit}}</p>
                 </div>
                 <div class="tile slideIn seventh">
-                    <p>{{weather.weather.data[2].simpleforecast.forecastday[1].date.weekday}}</p>
+                    <p class="forecast-day">{{weather.weather.data[2].simpleforecast.forecastday[1].date.weekday}}</p>
                     <img src="{{weather.weather.data[2].simpleforecast.forecastday[1].icon_url}}">
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[1].low.fahrenheit}}</p>
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[1].high.fahrenheit}}</p>
                 </div>
                 <div class="tile slideIn eighth">
-                    <p>{{weather.weather.data[2].simpleforecast.forecastday[2].date.weekday}}</p>
+                    <p class="forecast-day">{{weather.weather.data[2].simpleforecast.forecastday[2].date.weekday}}</p>
                     <img src="{{weather.weather.data[2].simpleforecast.forecastday[2].icon_url}}">
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[2].low.fahrenheit}}</p>
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[2].high.fahrenheit}}</p>
                 </div>
                 <div class="tile slideIn ninth">
-                    <p>{{weather.weather.data[2].simpleforecast.forecastday[3].date.weekday}}</p>
+                    <p class="forecast-day">{{weather.weather.data[2].simpleforecast.forecastday[3].date.weekday}}</p>
                     <img src="{{weather.weather.data[2].simpleforecast.forecastday[3].icon_url}}">
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[3].low.fahrenheit}}</p>
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[3].high.fahrenheit}}</p>
                 </div>
                 <div class="tile slideIn tenth">
-                    <p>{{weather.weather.data[2].simpleforecast.forecastday[4].date.weekday}}</p>
+                    <p class="forecast-day">{{weather.weather.data[2].simpleforecast.forecastday[4].date.weekday}}</p>
                     <img src="{{weather.weather.data[2].simpleforecast.forecastday[4].icon_url}}">
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[4].low.fahrenheit}}</p>
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[4].high.fahrenheit}}</p>
                 </div><br>
                 <div class="tile slideIn eleventh">
-                    <p>{{weather.weather.data[2].simpleforecast.forecastday[5].date.weekday}}</p>
+                    <p class="forecast-day">{{weather.weather.data[2].simpleforecast.forecastday[5].date.weekday}}</p>
                     <img src="{{weather.weather.data[2].simpleforecast.forecastday[5].icon_url}}">
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[5].low.fahrenheit}}</p>
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[5].high.fahrenheit}}</p>
                 </div>
                 <div class="tile slideIn twelth">
-                    <p>{{weather.weather.data[2].simpleforecast.forecastday[6].date.weekday}}</p>
+                    <p class="forecast-day">{{weather.weather.data[2].simpleforecast.forecastday[6].date.weekday}}</p>
                     <img src="{{weather.weather.data[2].simpleforecast.forecastday[6].icon_url}}">
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[6].low.fahrenheit}}</p>
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[6].high.fahrenheit}}</p>
                 </div>
                 <div class="tile slideIn thirteenth">
-                    <p>{{weather.weather.data[2].simpleforecast.forecastday[7].date.weekday}}</p>
+                    <p class="forecast-day">{{weather.weather.data[2].simpleforecast.forecastday[7].date.weekday}}</p>
                     <img src="{{weather.weather.data[2].simpleforecast.forecastday[7].icon_url}}">
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[7].low.fahrenheit}}</p>
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[7].high.fahrenheit}}</p>
                 </div>
                 <div class="tile slideIn fourteenth">
-                    <p>{{weather.weather.data[2].simpleforecast.forecastday[8].date.weekday}}</p>
+                    <p class="forecast-day">{{weather.weather.data[2].simpleforecast.forecastday[8].date.weekday}}</p>
                     <img src="{{weather.weather.data[2].simpleforecast.forecastday[8].icon_url}}">
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[8].low.fahrenheit}}</p>
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[8].high.fahrenheit}}</p>
                 </div>
                 <div class="tile slideIn fifteenth">
-                    <p>{{weather.weather.data[2].simpleforecast.forecastday[9].date.weekday}}</p>
+                    <p class="forecast-day">{{weather.weather.data[2].simpleforecast.forecastday[9].date.weekday}}</p>
                     <img src="{{weather.weather.data[2].simpleforecast.forecastday[9].icon_url}}">
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[9].low.fahrenheit}}</p>
                     <p class="ten-day-tempreading">{{weather.weather.data[2].simpleforecast.forecastday[9].high.fahrenheit}}</p>
