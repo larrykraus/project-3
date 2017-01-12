@@ -93,8 +93,6 @@ function UserController($http, $routeParams, $location) {
 				vm.weather = response;
 				console.log(vm.weather);
 			});
-
-	console.log('reached');
 	}
 }
 
