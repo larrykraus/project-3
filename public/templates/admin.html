@@ -1,3 +1,35 @@
-<ul>
-	<li ng-repeat="user in userController.allUsers">{{user.first_name}}</li>
-</ul>
+<div class="canvas">
+	
+	<div class="row">
+
+		<div class="container col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+
+			<h3 class="text-center">Admin</h3>
+				<form class="admin-user-form" ng-submit="admin.updateUser(user)">
+					<!-- <input type="submit" value="Save Changes"> -->
+					<table class="table table-striped">
+						<tr>
+							<th>Id</th>
+							<th>Username</th>
+							<th>Email</th>
+							<th>Location</th>
+							<!-- <th>Admin</th> -->
+							<th>Delete</th>
+						</tr>
+						<tr ng-repeat="user in admin.allUsers">
+							<td>{{user.id}}</td>
+							<td>{{user.username}}</td>
+							<td>{{user.email}}</td>
+							<td>{{user.default_location}}</td>
+							<!-- <td><input type="checkbox" ng-model="admin.new_user.admin" ng-true-value="true" ng-false-value="false"></td> -->
+							<td><button ng-click="admin.deleteUser(user)">Delete</button></td>
+						</tr>
+					</table>
+				</form>
+		</div>
+
+	</div>
+
+</div>
+
+

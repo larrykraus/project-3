@@ -6,7 +6,8 @@ var userCreate = function() {
 	    password:"larry",
 	    username: "larry",
 	    default_location: "Denver",
-	    displayName: "Larry Kraus",
+	    // resetPasswordExpires: 9999-12-31,
+    	// resetPasswordToken: "null",
 	    admin: true
   	})
 	.then(function(user) {
@@ -14,12 +15,22 @@ var userCreate = function() {
 	});
 };
 
-var locationCreate = function() {
-	return DB.Location.create({
-	    name: "Denver"
+// var locationCreate = function() {
+// 	return DB.Location.create({
+// 	    name: "Denver"
+//   	})
+// 	.then(function(location) {
+//     	console.log(location);
+// 	});
+// };
+
+var resortCreate = function() {
+	return DB.Resort.create({
+	    name: "Breckenridge",
+	    zip_code: "80424"
   	})
-	.then(function(location) {
-    	console.log(location);
+	.then(function(resort) {
+    	console.log(resort);
 	});
 };
 
@@ -34,8 +45,9 @@ var activityCreate = function() {
 
 
 userCreate()
-.then(locationCreate)
+// .then(locationCreate)
 .then(activityCreate)
+.then(resortCreate)
 .then(function() {
 	process.exit();
 });

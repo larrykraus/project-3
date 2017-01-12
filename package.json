@@ -23,14 +23,20 @@
   "dependencies": {
     "bcrypt": "^1.0.2",
     "bcrypt-nodejs": "latest",
+    "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
     "chai": "^3.5.0",
     "connect-flash": "~0.1.1",
     "cookie-parser": "~1.0.0",
+    "crypto": "0.0.3",
+    "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "express-session": "~1.0.0",
+    "hbs": "^4.0.0",
+    "jwt-simple": "^0.4.1",
     "method-override": "~1.0.0",
     "mocha": "^3.2.0",
+    "moment": "^2.11.1",
     "mongoose": "^4.7.2",
     "morgan": "~1.0.0",
     "passport": "^0.1.18",
@@ -41,11 +47,6 @@
     "pg": "^6.1.2",
     "pg-hstore": "^2.3.2",
     "request": "^2.79.0",
-    "sequelize": "^3.28.0",
-    "hbs": "^4.0.0",
-    "jwt-simple": "^0.4.1",
-    "moment": "^2.11.1",
-    "bcryptjs": "^2.3.0",
-    "dotenv": "^2.0.0"
+    "sequelize": "^3.28.0"
   }
 }

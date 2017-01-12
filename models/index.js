@@ -33,25 +33,27 @@ module.exports.Sequelize = Sequelize;
 module.exports.sequelize = sequelize;
 
 var User = sequelize.import('./user');
-var Location = sequelize.import('./location');
+var Resort = sequelize.import('./resort');
+var Preference = sequelize.import('./preference');
 var Activity = sequelize.import('./activity');
 
 var UserActivity = sequelize.define('user_activity', {
 	role: Sequelize.STRING
 });
 
-var UserLocation = sequelize.define('user_location', {
+var UserResort = sequelize.define('user_resort', {
 	role: Sequelize.STRING
 });
 
-User.belongsToMany(Location, {through: UserActivity});
-Location.belongsToMany(User, {through: UserActivity});
+User.belongsToMany(Resort, {through: UserResort});
+Resort.belongsToMany(User, {through: UserResort});
 
-User.belongsToMany(Activity, {through: UserLocation});
-Activity.belongsToMany(User, {through: UserLocation});
+User.belongsToMany(Activity, {through: UserActivity});
+Activity.belongsToMany(User, {through: UserActivity});
 
 module.exports.models = {
 	User: User,
-	Location: Location,
+	Resort: Resort,
+	Preference: Preference,
 	Activity: Activity
 };

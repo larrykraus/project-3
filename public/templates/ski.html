@@ -1,11 +1,48 @@
 <div class="canvas">
-	<br>
-	<h3>Ready to hit the Slopes?</h3>
-	<p>Select a resort to check for some gnar pow bruh</p>
-	<br>
-<!-- 	<div class="container">
-		<div class="slideIn first col-md-2">I slid in</div> 
-		<div class="slideIn second col-md-2">I'm 2nd</div> 
-		<div class="slideIn third col-md-2">I'm 3rd</div> 	
-	</div> -->
+	<div class="row">
+		<div class="resort-box col-md-6">
+			<form class="add-resort-form">
+
+		        <select>
+		            <option ng-repeat="resort in ski.allResorts">{{resort.name}}</option> 
+		        </select>
+				<br>
+		        <input ng-model="weather.location" type="submit" value="Add Resort" ng-submit="ski.getSkiWeather(location)">
+	        </form>
+	    </div>
+
+		<div class="resort-box col-md-6" ng-repeat="favorite in ski.favoriteResorts">
+
+	        <h4>{{favorite.name}}</h4>
+
+	        <div class="resort-tile col-md-4">
+	        	{{skiWeather.temperature}}
+	        </div>
+
+	        <div class="resort-tile col-md-4">
+	        	{{skiWeather.snow}}
+	        </div>
+
+	        <div class="resort-tile col-md-4">
+				{{skiWeather.wind}}
+	        </div>
+
+	    </div>
+
+    </div>
 </div>
+
+
+       <!-- <div class="tile slideIn first">
+            <p class="tile-hour">{{weather.weather.data[1][0].FCTTIME.civil}}</p>
+            <img src="{{weather.weather.data[1][0].icon_url}}">
+            <p class="tempreading">
+            {{weather.weather.data[1][0].temp.english}}</p>
+        </div> -->
+
+
+
+
+
+
+
