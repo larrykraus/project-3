@@ -7,10 +7,10 @@
 			<h3 class="text-center">Login</h3>
 			<form ng-submit="lc.login()">
 				<div class="form-group">
-					<input type="text" ng-model="lc.new_user.email" class="form-control" placeholder="Email">
+					<input type="text" ng-model="lc.new_user.email" class="form-control" placeholder="Email" required>
 				</div>
 				<div class="form-group">
-					<input type="password" ng-model="lc.new_user.password" class="form-control" placeholder="Password">
+					<input type="password" ng-model="lc.new_user.password" class="form-control" placeholder="Password" required>
 				</div>
 					<input type="submit" value="LogIn" class="btn btn-block btn-info">
 			</form>
