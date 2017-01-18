@@ -10,7 +10,6 @@ function show (req, res) {
 
     // Get Location
     request(url, function (err, response1, body) {
-        console.log('Here is the body: ' + body);
         var location = JSON.parse(body).location.requesturl;
         var conditionsUrl = apiUrl + "/conditions/q/" + location + ".json";
         var hourlyUrl = apiUrl + "/hourly/q/" + location + ".json";

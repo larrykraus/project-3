@@ -118,7 +118,6 @@ function MainController(Account) {
 	var vm = this;
 
 	vm.currentUser = function() {
-		alert(Account.currentUser());
 		return Account.currentUser();
 	}
 }
@@ -233,14 +232,14 @@ function SkiController($http, $location, Account) {
     vm.getSkiWeather = getSkiWeather;
     vm.getSavedResorts = getSavedResorts;
     vm.getAllResorts = getAllResorts;
+    vm.addResort = addResort;
+
 
 
     function getAllResorts() {
-		console.log('getAllResorts');
 		$http
 			.get('/api/resorts')
 			.then(function(response) {
-				console.log(response.data);
 				vm.allResorts = response.data;
 			});
 	}
@@ -248,17 +247,37 @@ function SkiController($http, $location, Account) {
 	getAllResorts();
 
 	function getSkiWeather(location) {
+
+		console.log(location);
 		$http
-			.get('/api/ski/' + vm.location)
+			.get('/api/ski/' + location)
 			.then(function(response) {
 				vm.skiWeather = response;
 				console.log(vm.skiWeather);
 			});
 	}
 
+	function addResort(user_id, resort_id) {
+		console.log(user_id);
+		console.log(resort_id);
+		var preference = {
+			user_id: user_id,
+			resort_id: resort_id
+		}
+
+		// var preference.user_id = user_id;
+		// var preference.resort_id = resort_id;
+		$http
+			.post('/api/preferences/', preference)
+			.then(function(response) {
+				vm.addedResort = response.data;
+				console.log(vm.addedResort);
+				getSavedResorts();
+			})
+	}
+
     function getSavedResorts(zip_code) {
     	console.log(zip_code);
-		console.log('getAllUsers');
 		$http
 			.get('/api/resorts/' + zip_code)
 			.then(function(response) {

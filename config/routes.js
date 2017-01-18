@@ -4,6 +4,7 @@ var usersController = require('../controllers/users.js');
 var activitiesController = require('../controllers/activities.js');
 var locationsController = require('../controllers/locations.js');
 var resortsController = require('../controllers/resorts.js');
+var preferencesController = require('../controllers/preferences.js');
 var weatherController = require('../controllers/weather.js');
 
 // User Routes
@@ -40,6 +41,23 @@ router.put('/api/resorts/:id', resortsController.update);
 
 // destroy
 router.delete('/api/resorts/:id', resortsController.destroy);
+
+// Favorite Resort Routes
+
+// index
+router.get('/api/preferences', preferencesController.index);
+
+// create
+router.post('/api/preferences', preferencesController.create);
+
+// show
+router.get('/api/preferences/:id', preferencesController.show);
+
+// update
+router.put('/api/preferences/:id', preferencesController.update);
+
+// destroy
+router.delete('/api/preferences/:id', preferencesController.destroy);
 
 
 // Location Routes
