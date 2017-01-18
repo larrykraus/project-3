@@ -1,27 +1,23 @@
 <div class="canvas">
 	<div class="row">
 		<div class="resort-box col-md-12">
-			<!-- <form class="add-resort-form" ng-submit="ski.getSkiWeather()">
 
-		        <select>
-		            <option ng-repeat="resort in ski.allResorts" >{{resort.zip_code}}</option>
+		        <select ng-model="selectedResort" ng-change="ski.getSkiWeather(selectedResort)" data-ng-options="resort.zip_code as resort.name for resort in ski.allResorts | orderBy: 'name'">
+		        	<option value="">Select Resort</option>
 		        </select>
-		        <input ng-model="ski.resort.name">
-				<br>
-		        <input type="submit" value="Add Resort">
-	        </form> -->
+		        <br>
+		        <!-- <h3 class="cityname">{{selectedResort}}</h3> -->
 
-	        <form id="display-form" ng-submit="ski.getSkiWeather(location)">		
-				<input id="display-input" ng-model="ski.location" placeholder="Enter resort zip code">
-			</form>
 	    </div>
 
-	    <br>
+		<div class="resort-box col-md-12">
 
-		<div class="resort-box col-md-12" >
+
 
 
 	        <h3 class="cityname">{{ski.skiWeather.data[0].display_location.city}}</h3>
+
+	        
 
 	        <div class="resort-tile slideIn first">
 	        	<h6>Current Temperature</h6>
@@ -38,6 +34,40 @@
 				{{ski.skiWeather.data[1][0].wspd.english}}
 	        </div>
 
+	        <form id="add-resort-form">
+
+		        <input type="submit" id="add-resort-submit" class="fav-resort-button" ng-click="ski.addResort(main.currentUser().id, selectedResort)" value="Add to Favorites">
+
+	        </form>
+
+	    </div>
+
+	    <div class="row">
+	    	<div class="resort-box col-md-12" ng-repeat="resort in ski.savedResorts">
+
+
+	        <!-- <h3 class="cityname">{{ski.skiWeather.data[0].display_location.city}}</h3> -->
+
+	        <h3 class="cityname">{{resort.name}}</h3>
+
+	        <div class="resort-tile slideIn first">
+	        	<h6>Current Temperature</h6>
+	        	{{ski.skiWeather.data[1][0].temp.english}}
+	        </div>
+
+	        <div class="resort-tile slideIn second">
+	        	<h6>Current Snowfall</h6>
+	        	{{ski.skiWeather.data[1][0].snow.english}}
+	        </div>
+
+	        <div class="resort-tile slideIn third">
+	        	<h6>Current Wind Speed</h6>
+				{{ski.skiWeather.data[1][0].wspd.english}}
+	        </div>
+
+	        <button class="fav-resort-button" ng-click="ski.getSavedResorts()">
+
+	    </div>
 	    </div>
 
     </div>
