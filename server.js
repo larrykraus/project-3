@@ -6,7 +6,7 @@ var bcrypt = require('bcryptjs');
 var auth = require('./resources/auth');
 var weatherRouter = require('./config/routes.js');
 
-require('dotenv').load();
+// require('dotenv').load();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
