@@ -183,10 +183,12 @@ app.get('*', function(req, res) {
 });
 
 
-//app.listen(process.env.PORT || 3000, function() {
 
-app.listen(process.env.DATABASE_URL || 3000, function() {
 
-	console.log(process.env.DATABASE_URL)
+
+
+app.listen(process.env.PORT || 3000, function() {
+
+	console.log(process.env.PORT)
 	console.log('Weather app listening on localhost:3000');
 })
