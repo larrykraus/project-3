@@ -21,8 +21,7 @@ var pg = require('pg');
 // var sequelize = new Sequelize('postgres://micahwierenga@localhost:5432/project-3');
 
 
-var sequelize = new Sequelize(process.env.DATABASE_URL || 'postgres://micahwierenga@localhost:5432/project-3', {
-
+var sequelize = new Sequelize(process.env.DATABASE_URL || 'postgres://micahwierenga@localhost:5432/project3', {
 
 	dialect: 'postgres',
 	protocol: 'postgres',
