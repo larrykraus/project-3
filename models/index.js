@@ -2,29 +2,29 @@ var Sequelize = require('sequelize');
 
 var pg = require('pg');
 
-pg.defaults.ssl = true;
+// pg.defaults.ssl = true;
 
-pg.connect(process.env.DATABASE_URL || 'postgres://micahwierenga@localhost:5432/project3', function(err, client) {
+// pg.connect(process.env.DATABASE_URL || 'postgres://micahwierenga@localhost:5432/project3', function(err, client) {
 
-  if (err) throw err;
-  console.log('Connected to postgres! Getting schemas...');
+//   if (err) throw err;
+//   console.log('Connected to postgres! Getting schemas...');
 
-  client
-    .query('SELECT * FROM users;')
-    .query('SELECT * FROM resorts;')
-    .on('row', function(row) {
-      console.log(JSON.stringify(row));
-    });
-});
-
-// var sequelize = new Sequelize(process.env.DATABASE_URL || 'postgres://micahwierenga@localhost:5432/project3', {
-
-// 	dialect: 'postgres',
-// 	protocol: 'postgres',
-// 	// port: match[4],
-// 	// host: match[3],
-// 	loggin: true
+//   client
+//     .query('SELECT * FROM users;')
+//     .query('SELECT * FROM resorts;')
+//     .on('row', function(row) {
+//       console.log(JSON.stringify(row));
+//     });
 // });
+
+var sequelize = new Sequelize(process.env.DATABASE_URL || 'postgres://micahwierenga@localhost:5432/project3', {
+
+	dialect: 'postgres',
+	protocol: 'postgres',
+	// port: match[4],
+	// host: match[3],
+	loggin: true
+});
 
 
 module.exports.Sequelize = Sequelize;
