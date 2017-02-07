@@ -59,6 +59,9 @@
         var s = today.getSeconds();
         m = checkTime(m);
         s = checkTime(s);
+        if (h>12){
+          h = h-12;
+        }
         document.getElementById('txt').innerHTML =
         h + ":" + m;
         var t = setTimeout(startTime, 500);
