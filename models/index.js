@@ -4,7 +4,7 @@ var pg = require('pg');
 
 // pg.defaults.ssl = true;
 
-// pg.connect(process.env.DATABASE_URL || 'postgres://micahwierenga@localhost:5432/project3', function(err, client) {
+// pg.connect(process.env.DATABASE_URL || 'postgres://guyliechty@localhost:5432/project3', function(err, client) {
 
 //   if (err) throw err;
 //   console.log('Connected to postgres! Getting schemas...');
@@ -18,7 +18,7 @@ var pg = require('pg');
 // });
 
 
-var sequelize = new Sequelize(process.env.DATABASE_URL || 'postgres://micahwierenga@localhost:5432/project3', {
+var sequelize = new Sequelize(process.env.DATABASE_URL || 'postgres://guyliechty@localhost:5432/project3', {
 
 
 	dialect: 'postgres',

@@ -1,7 +1,7 @@
 <form id="display-form" ng-submit="weather.getWeather(location)" >
     <input id="display-input" ng-model="weather.location" placeholder="city or zip">
 </form>
-    <div class="weather-canvas">
+    <div class="canvas weather">
         <h3 class="cityname">{{weather.weather.data[0].display_location.city}}
         </h3>
         <h5 class="statename">{{weather.weather.data[0].display_location.state_name}}

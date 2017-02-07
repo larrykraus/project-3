@@ -1,92 +1,38 @@
-<div class="canvas">
-	<div class="row">
-		<div class="resort-box col-md-12">
+<div class="resort-box col-md-12 col-lg-12 col-sm-12">
 
-		        <select ng-model="selectedResort" ng-change="ski.getSkiWeather(selectedResort)" data-ng-options="resort.zip_code as resort.name for resort in ski.allResorts | orderBy: 'name'">
+		        <select id="resort-input" ng-model="selectedResort" ng-change="ski.getSkiWeather(selectedResort)" data-ng-options="resort.zip_code as resort.name for resort in ski.allResorts | orderBy: 'name'">
 		        	<option value="">Select Resort</option>
 		        </select>
 		        <br>
 		        <!-- <h3 class="cityname">{{selectedResort}}</h3> -->
+</div>
 
-	    </div>
+<div class="canvas ski col-sm-6 col-md-6 col-lg-6">
+	<div class="row">
+		<div class="resort-box col-md-12 weather">
 
-		<div class="resort-box col-md-12">
-
-
-
-
-	        <h3 class="cityname">{{ski.skiWeather.data[0].display_location.city}}</h3>
-
-	        
+	        <h3 class="cityname">{{ski.skiWeather.data[0].display_location.city}}</h3>        
 
 	        <div class="resort-tile slideIn first">
 	        	<h6>Current Temperature</h6>
-	        	<p>{{ski.skiWeather.data[1][0].temp.english}}</p>
-	        	<!-- <img src="{{ski.skiWeather.data[1][0].icon_url}}"> -->
+	        	<p>{{ski.skiWeather.data[1][0].temp.english}} degrees</p>
+	        	<img src="{{ski.skiWeather.data[1][0].icon_url}}" class="ski-photo"/>
 	        </div>
 
 	        <div class="resort-tile slideIn second">
 	        	<h6>Current Snowfall</h6>
-	        	<p>{{ski.skiWeather.data[1][0].snow.english}}</p>
-	        	<!-- <img src="http://icons.wxug.com/i/c/k/snow.gif"> -->
+	        	<p>{{ski.skiWeather.data[1][0].snow.english}} inches</p>
+	        	<img src="http://icons.wxug.com/i/c/k/snow.gif" class="ski-photo"/>
 	        </div>
 
-	        <div class="resort-tile slideIn third">
+	        <div class="resort-tile slideIn third ">
 	        	<h6>Current Wind Speed</h6>
-				<p>{{ski.skiWeather.data[1][0].wspd.english}}</p>
-				<!-- <img src="http://icons.wxug.com/i/c/k/cloudy.gif"> -->
+				<p>{{ski.skiWeather.data[1][0].wspd.english}} mph</p>
+				<img src="https://cdn4.iconfinder.com/data/icons/weather-conditions/512/cloud_wind-512.png" class="ski-photo"/>
 	        </div>
 
-<!-- 	        <form id="add-resort-form">
-
-		        <input type="submit" id="add-resort-submit" class="fav-resort-button" ng-click="ski.addResort(main.currentUser().id, selectedResort)" value="Add to Favorites">
-
-	        </form> -->
-
-	    </div>
-
-	    <div class="row">
-	    	<div class="resort-box col-md-12" ng-repeat="resort in ski.savedResorts">
-
-
-	        <!-- <h3 class="cityname">{{ski.skiWeather.data[0].display_location.city}}</h3> -->
-
-		        <h3 class="cityname">{{resort.name}}</h3>
-
-		        <div class="resort-tile slideIn first">
-		        	<h6>Current Temperature</h6>
-		        	{{ski.skiWeather.data[1][0].temp.english}}
-		        </div>
-
-		        <div class="resort-tile slideIn second">
-		        	<h6>Current Snowfall</h6>
-		        	{{ski.skiWeather.data[1][0].snow.english}}
-		        </div>
-
-		        <div class="resort-tile slideIn third">
-		        	<h6>Current Wind Speed</h6>
-					{{ski.skiWeather.data[1][0].wspd.english}}
-		        </div>
-
-		        <button class="fav-resort-button" ng-click="ski.getSavedResorts()">
-
-	    	</div>
 	    </div>
 
     </div>
 </div>
-
-
-       <!-- <div class="tile slideIn first">
-            <p class="tile-hour">{{weather.weather.data[1][0].FCTTIME.civil}}</p>
-            <img src="{{weather.weather.data[1][0].icon_url}}">
-            <p class="tempreading">
-            {{weather.weather.data[1][0].temp.english}}</p>
-        </div> -->
-
-
-
-
-
-
 

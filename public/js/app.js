@@ -217,13 +217,13 @@ function WeatherController($http, $location, Account) {
 	function getWeather(location) {
 		console.log('getWeather');
 		console.log(vm.location);
-		$('.weather.canvas').removeClass("weather");
-
 		$http
 			.get('/api/weather/' + vm.location)
 			.then(function(response) {
 				vm.weather = response;
 				console.log(vm.weather);
+				$('.weather.canvas').removeClass("weather");
+				console.log("hit");
 			});
 	}
 }
@@ -251,11 +251,14 @@ function SkiController($http, $location, Account) {
 	function getSkiWeather(location) {
 
 		console.log(location);
+
 		$http
 			.get('/api/ski/' + location)
 			.then(function(response) {
 				vm.skiWeather = response;
 				console.log(vm.skiWeather);
+				$('.ski.canvas').removeClass("ski");
+				console.log("hit");
 			});
 	}
 

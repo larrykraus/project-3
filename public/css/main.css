@@ -383,7 +383,13 @@ div.facebox{
 	bottom: 2%;
 	margin: 0 auto;
 }
-@media (max-width: 780px){
+
+img.ski-photo{
+	height: 30%;
+}
+
+
+/*@media (max-width: 780px){
 	#dev-button-text {
 		font-size: 10px;
 	}
@@ -405,7 +411,7 @@ div.facebox{
 	a.btn.welcome-button{
 		margin: 0 auto;
 	}
-}
+}*/
 
 /*End Modal CSS*/
 
@@ -454,7 +460,7 @@ p {
 
 .canvas {
 	height: auto;
-	width: 460px;
+	width: 100%;
 	background-color: rgba(206, 206, 216, 0.4);
 	border-radius: 20px;
 	margin: 0 auto;
@@ -464,12 +470,16 @@ p {
 	/*text-transform: uppercase;*/
 }
 
-.weather.weather-canvas{
+.weather.canvas{
 	display: none;
 }
-/*.canvas.on{
-	display: block;
-}*/
+
+.ski.canvas{
+	display: none;
+}
+
+	/*start off hidden, toggle class to show with form submit*/
+/*	display: none;*/
 
 div.canvas > h3 {
 	padding-left: 20px;
@@ -478,9 +488,6 @@ div.canvas > h3 {
 	color: rgba(30, 22, 54, 0.6); 
 	text-transform: uppercase;
 	letter-spacing: -.5px;
-
-	/*start off hidden, toggle class to show with form submit*/
-/*	display: none;*/
 
 }
 
@@ -500,8 +507,8 @@ div.canvas > p {
 
 }
 #display-input{
-	width: 450px;
-	height: 30px;
+	width: 80%;
+	height: 50px;
 	font-weight: bold;
 	text-align: center;
 	border-radius: 10px;
@@ -511,6 +518,22 @@ div.canvas > p {
 	margin-top: 20px;
 }
 
+#resort-input{
+	width: 60%;
+	height: 50px;
+	margin: 0 20% 0 20%;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 10px;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: 'Source Sans Pro', sans-serif;
+	margin-top: 20px;
+}
+
+.resort-box{
+	margin: 0 0 30px 0;
+}
 /*end styling display input search*/
 
 .cityname {
@@ -527,11 +550,11 @@ div.canvas > p {
 
 .tile {
 	display: inline-block;
-	width: 80px;
+	width: 18%;
 	height: 110px; 
 	border-radius: 5px;
 	background-color: #eee;
-	margin: 10px auto;
+	margin: .5%;
 	padding: 10px;
 }
 
@@ -579,7 +602,7 @@ img#logo{
 	padding: 10px;
 	display: flex;
 	height: 7%;
-	position: absolute;
+	position: fixed;
 	top: 0;
 }
 /*
@@ -613,7 +636,7 @@ nav.navbar.navbar-default{
 	padding: 0px;
 	text-transform: uppercase;
 	font-weight: 700;
-	font-size: 10px;
+	font-size: 15px;
 	background-color: : rgb(30, 20, 56);
 }
 
