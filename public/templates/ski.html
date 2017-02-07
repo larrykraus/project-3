@@ -21,17 +21,20 @@
 
 	        <div class="resort-tile slideIn first">
 	        	<h6>Current Temperature</h6>
-	        	{{ski.skiWeather.data[1][0].temp.english}}
+	        	<p>{{ski.skiWeather.data[1][0].temp.english}}</p>
+	        	<!-- <img src="{{ski.skiWeather.data[1][0].icon_url}}"> -->
 	        </div>
 
 	        <div class="resort-tile slideIn second">
 	        	<h6>Current Snowfall</h6>
-	        	{{ski.skiWeather.data[1][0].snow.english}}
+	        	<p>{{ski.skiWeather.data[1][0].snow.english}}</p>
+	        	<!-- <img src="http://icons.wxug.com/i/c/k/snow.gif"> -->
 	        </div>
 
 	        <div class="resort-tile slideIn third">
 	        	<h6>Current Wind Speed</h6>
-				{{ski.skiWeather.data[1][0].wspd.english}}
+				<p>{{ski.skiWeather.data[1][0].wspd.english}}</p>
+				<!-- <img src="http://icons.wxug.com/i/c/k/cloudy.gif"> -->
 	        </div>
 
 	        <form id="add-resort-form">
@@ -48,26 +51,26 @@
 
 	        <!-- <h3 class="cityname">{{ski.skiWeather.data[0].display_location.city}}</h3> -->
 
-	        <h3 class="cityname">{{resort.name}}</h3>
+		        <h3 class="cityname">{{resort.name}}</h3>
 
-	        <div class="resort-tile slideIn first">
-	        	<h6>Current Temperature</h6>
-	        	{{ski.skiWeather.data[1][0].temp.english}}
-	        </div>
+		        <div class="resort-tile slideIn first">
+		        	<h6>Current Temperature</h6>
+		        	{{ski.skiWeather.data[1][0].temp.english}}
+		        </div>
 
-	        <div class="resort-tile slideIn second">
-	        	<h6>Current Snowfall</h6>
-	        	{{ski.skiWeather.data[1][0].snow.english}}
-	        </div>
+		        <div class="resort-tile slideIn second">
+		        	<h6>Current Snowfall</h6>
+		        	{{ski.skiWeather.data[1][0].snow.english}}
+		        </div>
 
-	        <div class="resort-tile slideIn third">
-	        	<h6>Current Wind Speed</h6>
-				{{ski.skiWeather.data[1][0].wspd.english}}
-	        </div>
+		        <div class="resort-tile slideIn third">
+		        	<h6>Current Wind Speed</h6>
+					{{ski.skiWeather.data[1][0].wspd.english}}
+		        </div>
 
-	        <button class="fav-resort-button" ng-click="ski.getSavedResorts()">
+		        <button class="fav-resort-button" ng-click="ski.getSavedResorts()">
 
-	    </div>
+	    	</div>
 	    </div>
 
     </div>
