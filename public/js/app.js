@@ -217,6 +217,8 @@ function WeatherController($http, $location, Account) {
 	function getWeather(location) {
 		console.log('getWeather');
 		console.log(vm.location);
+		$('.weather.canvas').removeClass("weather");
+
 		$http
 			.get('/api/weather/' + vm.location)
 			.then(function(response) {

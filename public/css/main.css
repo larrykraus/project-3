@@ -463,6 +463,10 @@ p {
 /*	display: none;*/
 	/*text-transform: uppercase;*/
 }
+
+.weather.weather-canvas{
+	display: none;
+}
 /*.canvas.on{
 	display: block;
 }*/
@@ -572,13 +576,13 @@ div.canvas > p {
 }
 img#logo{
 	float: left;
-	padding: 15px;
+	padding: 10px;
 	display: flex;
-	height: 15%;
+	height: 7%;
 	position: absolute;
 	top: 0;
 }
-
+/*
 @media (max-width: 400px){
 	img#logo{
 		height: 8%;
@@ -588,7 +592,7 @@ img#logo{
 		width: ;
 	}
 	*/
-}
+/*}*/
 
 /*img:hover{
 	background: rgba(206, 206, 216, 0.2); 
