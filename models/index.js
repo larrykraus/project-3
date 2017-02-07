@@ -4,24 +4,21 @@ var pg = require('pg');
 
 // pg.defaults.ssl = true;
 
-// pg.connect(process.env.HEROKU_POSTGRESQL_YELLOW_URL, function(err, client) {
-
-// pg.connect(process.env.DATABASE_URL, function(err, client) {
+// pg.connect(process.env.DATABASE_URL || 'postgres://micahwierenga@localhost:5432/project3', function(err, client) {
 
 //   if (err) throw err;
 //   console.log('Connected to postgres! Getting schemas...');
 
 //   client
-//     .query('SELECT table_schema,table_name FROM information_schema.tables;')
+//     .query('SELECT * FROM users;')
+//     .query('SELECT * FROM resorts;')
 //     .on('row', function(row) {
 //       console.log(JSON.stringify(row));
 //     });
 // });
 
-// var sequelize = new Sequelize('postgres://guyliechty@localhost:5432/project3');
 
-
-var sequelize = new Sequelize(process.env.HEROKU_POSTGRESQL_YELLOW_URL || 'postgres://guyliechty@localhost:5432/project3', {
+var sequelize = new Sequelize(process.env.DATABASE_URL || 'postgres://micahwierenga@localhost:5432/project3', {
 
 
 	dialect: 'postgres',

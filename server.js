@@ -6,7 +6,7 @@ var bcrypt = require('bcryptjs');
 var auth = require('./resources/auth');
 var weatherRouter = require('./config/routes.js');
 
-require('dotenv').load();
+// require('dotenv').load();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -183,10 +183,12 @@ app.get('*', function(req, res) {
 });
 
 
-//app.listen(process.env.PORT || 3000, function() {
 
-app.listen(process.env.DATABASE_URL || 3000, function() {
 
-	console.log(process.env.DATABASE_URL)
+
+
+app.listen(process.env.PORT || 3000, function() {
+
+	console.log(process.env.PORT)
 	console.log('Weather app listening on localhost:3000');
 })

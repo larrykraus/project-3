@@ -68,9 +68,9 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
 			templateUrl: 'templates/weather.html',
 			controller: 'WeatherController',
 			controllerAs: 'weather',
-			resolve: {
-				loginRequired: loginRequired
-			}
+			// resolve: {
+			// 	loginRequired: loginRequired
+			// }
 		})
 		.state('ski', {
 			url: '/ski',
