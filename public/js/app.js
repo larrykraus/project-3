@@ -232,7 +232,7 @@ SkiController.$inject = ["$http", "$location", "Account"];
 function SkiController($http, $location, Account) {
     var vm = this;
     vm.getSkiWeather = getSkiWeather;
-    vm.getSavedResorts = getSavedResorts;
+    // vm.getSavedResorts = getSavedResorts;
     vm.getAllResorts = getAllResorts;
     vm.addResort = addResort;
 
