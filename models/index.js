@@ -18,7 +18,7 @@ var pg = require('pg');
 // });
 
 
-var sequelize = new Sequelize(process.env.DATABASE_URL || 'postgres://guyliechty@localhost:5432/project3', {
+var sequelize = new Sequelize(process.env.DATABASE_URL || 'postgres://micahwierenga@localhost:5432/project3', {
 
 
 	dialect: 'postgres',

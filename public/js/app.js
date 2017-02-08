@@ -281,17 +281,17 @@ function SkiController($http, $location, Account) {
 			})
 	}
 
-    function getSavedResorts(zip_code) {
-    	console.log(zip_code);
-		$http
-			.get('/api/resorts/' + zip_code)
-			.then(function(response) {
-				console.log(response.data);
-				vm.savedResorts = response.data;
-			});
-	}
+ //    function getSavedResorts(zip_code) {
+ //    	console.log(zip_code);
+	// 	$http
+	// 		.get('/api/resorts/' + zip_code)
+	// 		.then(function(response) {
+	// 			console.log(response.data);
+	// 			vm.savedResorts = response.data;
+	// 		});
+	// }
 
-	getSavedResorts();
+	// getSavedResorts();
     // function getSavedResorts(){
     //     console.log("getSavedResorts");
 
