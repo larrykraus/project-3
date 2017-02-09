@@ -1,6 +1,6 @@
 var jwt = require('jwt-simple'),
     moment = require('moment');
-var TOKEN_SECRET = process.env.TOKEN_SECRET;
+var TOKEN_SECRET = process.env.TOKEN_SECRET || require('../config/env').key;
 
 module.exports = {
   /*
@@ -16,7 +16,7 @@ module.exports = {
     var payload = null;
 
     try {
-      payload = jwt.decode(token, process.env.TOKEN_SECRET);
+      payload = jwt.decode(token, process.env.TOKEN_SECRET || TOKEN_SECRET);
       console.log(TOKEN_SECRET);
     }
     catch (err) {
@@ -34,11 +34,12 @@ module.exports = {
   * Generate JSON Web Token
   */
   createJWT: function (user) {
+    console.log('This is the token secret' + TOKEN_SECRET);
     var payload = {
       sub: user.id,
       iat: moment().unix(),
       exp: moment().add(14, 'days').unix()
     };
-    return jwt.encode(payload, process.env.TOKEN_SECRET);
+    return jwt.encode(payload, process.env.TOKEN_SECRET || TOKEN_SECRET);
   }
 };

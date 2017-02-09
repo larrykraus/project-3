@@ -126,7 +126,7 @@ app.post('/auth/signup', function(req, res) {
         User.create(req.body)
            .then(function(user) {
               if (!user) return error(res, "not saved");
-              console.log("Here are the user.dataValues: " + user.dataValues);
+              console.log("Here are the user.dataValues: " + user);
               auth.createJWT(user);
               console.log("Here is the user " + user);
               res.send({

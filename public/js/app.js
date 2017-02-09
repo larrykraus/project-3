@@ -148,6 +148,7 @@ function LoginController($location, Account) {
 	vm.new_user = {};
 
 	vm.login = function() {
+		console.log(vm.new_user);
 		Account
 			.login(vm.new_user)
 			.then(function() {
@@ -172,9 +173,9 @@ SignupController.$inject = ["$location", "Account"];
 function SignupController($location, Account) {
 	var vm = this;
 	vm.new_user = {};
-	console.log(vm.username);
 
 	vm.signup = function(newUser) {
+		console.log(vm.new_user);
 		Account
 			.signup(vm.new_user)
 			.then(
@@ -402,11 +403,12 @@ function Account($http, $q, $auth) {
 				.signup(userData)
 				.then(
 					function onSuccess(response) {
+						self.currentUser_id = response.data.user.id;
 						console.log(response);
 						$auth.setToken(response.data.token);
 					},
 					function onError(error) {
-						console.log(error);
+						console.error(error);
 					}
 				)
 		);
@@ -418,11 +420,12 @@ function Account($http, $q, $auth) {
 				.login(userData)
 				.then(
 					function onSuccess(response) {
-						self.currentUser_id = response.data.user.id;
+						console.log(response);
+						// self.currentUser_id = response.data.user.id;
 						$auth.setToken(response.data.token);
 					},
 					function onError(error) {
-						console.error(error); // Is this supposed to be console.log?
+						console.error(error);
 					}
 				)
 		);
@@ -439,6 +442,7 @@ function Account($http, $q, $auth) {
 	}
 
 	function currentUser() {
+		console.log(self.user);
 		if ( self.user ) { return self.user; }
 		if ( !$auth.isAuthenticated() ) { return null; }
 
